@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>埃尔德拉编年史 | Eldra Chronicles</title>
+  <link rel="stylesheet" href="/public/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=ZCOOL+XiaoWei&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- 启动界面 -->
+  <div id="start-screen">
+    <h1>埃尔德拉编年史</h1>
+    <p class="subtitle">Eldra Chronicles</p>
+    <div class="start-buttons">
+      <button id="start-new-game" class="start-button">新的冒险</button>
+      <button id="start-continue" class="start-button">继续冒险</button>
+    </div>
+  </div>
+
+  <div class="container">
+    <header>
+      <h1>埃尔德拉编年史</h1>
+      <p class="subtitle">Eldra Chronicles</p>
+    </header>
+    
+    <main id="game-container">
+      <div id="game">
+        <div class="node-header">
+          <h2 id="node-title">加载中...</h2>
+        </div>
+        
+        <div class="text-container">
+          <p id="node-text">游戏正在加载，请稍候...</p>
+          
+          <div id="random-event-result" class="event-result" hidden></div>
+        </div>
+        
+        <div id="choices-container" class="choices">
+          <!-- 选项将在此动态生成 -->
+        </div>
+      </div>
+      
+      <div id="character-panel">
+        <h3>角色状态</h3>
+        <div class="attributes">
+          <div class="attribute">
+            <span class="attribute-name">力量:</span>
+            <span id="attr-strength" class="attribute-value">0</span>
+          </div>
+          <div class="attribute">
+            <span class="attribute-name">智力:</span>
+            <span id="attr-intelligence" class="attribute-value">0</span>
+          </div>
+          <div class="attribute">
+            <span class="attribute-name">魅力:</span>
+            <span id="attr-charisma" class="attribute-value">0</span>
+          </div>
+          <div class="attribute">
+            <span class="attribute-name">幸运:</span>
+            <span id="attr-luck" class="attribute-value">0</span>
+          </div>
+        </div>
+        
+        <!-- 特殊状态显示区域 -->
+        <div class="status-section">
+          <h4>状态</h4>
+          <div id="special-status" class="special-status none">无</div>
+        </div>
+        
+        <div class="inventory-section">
+          <h4>背包 <span id="gold-display">0 金币</span></h4>
+          <ul id="inventory">
+            <!-- 物品将在此动态生成 -->
+          </ul>
+        </div>
+        
+        <!-- 流式加载显示框 -->
+        <div class="loading-section">
+          <h4>进度</h4>
+          <div id="loading-container" class="loading-container">
+            <div id="loading-text" class="loading-text">准备就绪</div>
+            <div id="loading-bar" class="loading-bar">
+              <div id="loading-progress" class="loading-progress"></div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- 场景图片放到侧边栏底部 -->
+        <div class="sidebar-image-container" id="sidebar-image" hidden>
+          <img id="scene-img" src="" alt="场景图片">
+        </div>
+      </div>
+    </main>
+    
+    <div id="game-controls">
+      <button id="new-game">新游戏</button>
+      <button id="save-game">保存游戏</button>
+      <button id="load-game">读取存档</button>
+      <button id="settings-btn">设置</button>
+    </div>
+    
+    <div id="saves-modal" class="modal" hidden>
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h3>存档列表</h3>
+        <div id="save-slots">
+          <!-- 存档槽将在此动态生成 -->
+        </div>
+      </div>
+    </div>
+
+    <!-- 设置模态窗口 -->
+    <div id="settings-modal" class="modal" hidden>
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>AI服务设置</h2>
+          <button class="close-modal">&times;</button>
+        </div>
+        <div class="modal-body">
+          <div class="settings-section">
+            <h3>AI服务配置</h3>
+            <div class="form-group">
+              <label for="ai-provider">服务提供商:</label>
+              <select id="ai-provider">
+                <option value="xai">OpenAI</option>
+                <option value="gemini">Gemini</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="ai-key">API密钥:</label>
+              <input type="password" id="ai-key" placeholder="输入您的API密钥">
+              <p class="form-hint">OpenAI密钥格式: sk-... (不要使用xai-开头的密钥)</p>
+            </div>
+            <div class="form-group">
+              <label for="ai-model">模型:</label>
+              <input type="text" id="ai-model" placeholder="例如: grok-3-beta, gemini-pro">
+              <p class="form-hint">OpenAI推荐模型: grok-3-beta, gpt-4</p>
+            </div>
+            <div class="form-group">
+              <label for="ai-temperature">Temperature (0-1):</label>
+              <input type="range" id="ai-temperature" min="0" max="1" step="0.1" value="0.7">
+              <span id="temperature-value">0.7</span>
+            </div>
+            <div class="form-group">
+              <label for="ai-max-tokens">最大Token数:</label>
+              <input type="number" id="ai-max-tokens" min="100" max="4096" value="1024">
+            </div>
+          </div>
+          <div id="ai-status-message" class="status-message"></div>
+          <div class="button-group">
+            <button id="test-ai-connection" class="secondary-btn">测试连接</button>
+            <button id="save-settings" class="primary-btn">保存设置</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <footer>
+    <p>&copy; 2023 埃尔德拉编年史 | Eldra Chronicles</p>
+  </footer>
+  
+  <!-- 右下角进度提示弹窗 -->
+  <div id="corner-toast" class="corner-toast" hidden>
+    <div class="corner-toast-content">
+      <div class="corner-toast-icon">⏳</div>
+      <div class="corner-toast-message">正在加载...</div>
+      <div class="corner-toast-progress">
+        <div class="corner-toast-progress-bar"></div>
+      </div>
+    </div>
+  </div>
+  
+  <script src="/public/client.js"></script>
+</body>
+</html>

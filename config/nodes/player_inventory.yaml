@@ -1,0 +1,25 @@
+id: "player_inventory"
+title: "背包与状态"
+text: |
+  ## 个人状态
+  - 健康值: ${state.health}/100
+  - 金币: ${state.gold} 枚
+  - 声望: ${state.karma > 0 ? '+' + state.karma : state.karma}
+  - 知识: ${state.knowledge}
+  - 游戏时间: ${state.time} 单位
+
+  ## 背包物品
+  ${state.inventory.map(item => `- ${item}`).join('\n')}
+
+  ${state.specialItems.length > 0 ? `\n## 特殊物品\n${state.specialItems.map(item => `- ${item}`).join('\n')}` : ''}
+
+  ${state.time > 20 ? '\n天色渐晚，你应该找个地方休息了。' : ''}
+image: "/images/inventory.jpg"
+init: |
+  // 不进行任何状态修改，仅显示当前状态
+choices:
+  - id: "return"
+    text: "返回"
+    target: "${state.returnNode || 'city_crossroad'}"
+    condition: ""
+    effect: ""

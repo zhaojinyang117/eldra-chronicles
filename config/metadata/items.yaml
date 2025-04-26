@@ -1,0 +1,366 @@
+- id: healing_potion
+  name: 治愈药水
+  type: consumable
+  description: 一瓶散发着淡淡绿色光芒的药水，闻起来有草药的清香。据说是由低语村最好的药剂师使用珍贵的森林草药精心调配而成。
+  effects:
+    - effect: heal
+      value: 50
+      duration: 0
+  rarity: common
+  value: 15
+  weight: 0.5
+  stackable: true
+  max_stack: 10
+  image: healing_potion.jpg
+  lore: "这种药水自古以来就是冒险者们的忠实伙伴，能够在危急时刻挽救生命。低语村的药剂师们世代相传的秘方，配方中包含了一种只在满月时才会开花的稀有植物。"
+  crafting_ingredients:
+    - item_id: forest_herbs
+      quantity: 2
+    - item_id: pure_water
+      quantity: 1
+
+- id: ancient_map
+  name: 古代地图
+  type: quest_item
+  rarity: rare
+  description: 一张年代久远的羊皮纸地图，标记了古代遗迹的位置和部分内部结构。地图边缘有些神秘符文。
+  effects:
+    - 解锁远古遗迹区域
+    - 提供遗迹内部的部分信息
+  value: 100
+  weight: 0.1
+  image: ancient_map.jpg
+
+- id: steel_sword
+  name: 精钢长剑
+  type: weapon
+  description: 一把由托尔·铁手精心打造的钢剑，剑身上有精美的花纹，刃部锋利无比。平衡性极佳，使用起来得心应手。
+  effects:
+    - effect: damage
+      value: 25
+      type: physical
+  rarity: uncommon
+  value: 150
+  weight: 3.0
+  durability: 100
+  equip_slot: main_hand
+  requirements:
+    strength: 5
+  image: steel_sword.jpg
+  lore: "托尔·铁手将祖传的锻造技艺发挥到极致的作品。据说这种剑的钢材中混合了一种特殊的矿石，使其具有不易折断且永不生锈的特性。"
+
+- id: leather_armor
+  name: 皮革护甲
+  type: armor
+  description: 由优质动物皮革制成的轻型护甲，提供基本的防护同时不影响行动灵活性。皮革经过特殊处理，既柔韧又坚固。
+  effects:
+    - effect: defense
+      value: 15
+      type: physical
+  rarity: common
+  value: 120
+  weight: 8.0
+  durability: 80
+  equip_slot: chest
+  requirements:
+    level: 1
+  image: leather_armor.jpg
+  lore: "这种设计已经被冒险者使用了数百年，经过无数次改良。现在的款式融合了实用性和少量的装饰元素，是新手冒险者的理想选择。"
+
+- id: mystic_amulet
+  name: 神秘护符
+  type: accessory
+  description: 一个用银链串起的奇特吊坠，中央镶嵌着一颗变幻着颜色的宝石。佩戴后能够增强魔法能力并提供一定的魔法防护。
+  effects:
+    - effect: magic_power
+      value: 15
+      duration: 0
+    - effect: magic_defense
+      value: 10
+      duration: 0
+  rarity: rare
+  value: 250
+  weight: 0.5
+  equip_slot: neck
+  requirements:
+    intelligence: 10
+  image: mystic_amulet.jpg
+  lore: "这种护符的制作方法已经失传，现存的都是古代文明的遗物。宝石中似乎封印着某种未知的能量，随着佩戴者的情绪而变化颜色。"
+
+- id: forest_herbs
+  name: 森林草药
+  type: material
+  description: 从低语森林中采集的各种草药，有些带有淡淡的荧光，有些则散发出奇特的香气。这些草药可以用于制作各种药水和魔法物品。
+  rarity: common
+  value: 8
+  weight: 0.2
+  stackable: true
+  max_stack: 50
+  image: forest_herbs.jpg
+  lore: "低语森林的草药因为生长在古老魔法的影响下，具有其他地方难以找到的神奇特性。只有熟悉森林的人才知道在哪里能找到最好的草药，以及如何安全地采集它们。"
+  gathering_skill: herbalism
+  gathering_difficulty: 2
+
+- id: magic_scroll
+  name: 魔法卷轴
+  type: consumable
+  description: 一张泛着淡蓝色光芒的羊皮纸卷轴，上面书写着复杂的魔法符文。使用后可以释放强大的一次性魔法效果。
+  effects:
+    - effect: spell_fireball
+      value: 80
+      duration: 0
+  rarity: uncommon
+  value: 100
+  weight: 0.3
+  stackable: true
+  max_stack: 5
+  image: magic_scroll.jpg
+  lore: "魔法卷轴是那些不精通魔法的人使用高级法术的唯一途径。制作一张卷轴需要专业的知识和稀有材料，是法师们的重要收入来源。"
+  use_skill: literacy
+
+- id: golden_key
+  name: 黄金钥匙
+  type: key
+  description: 一把由纯金打造的古老钥匙，上面刻有神秘的符文。尽管年代久远，但依然闪烁着金色的光芒，似乎永不褪色。
+  rarity: epic
+  value: 500
+  weight: 0.5
+  image: golden_key.jpg
+  lore: "传说这把钥匙能够打开艾尔德拉世界中最神秘的门扉。许多冒险者为了寻找它付出了生命的代价，但钥匙开启的宝藏究竟是什么，至今无人知晓。"
+  quest_related: true
+  unlock_target: "ancient_treasury"
+
+- id: enchanted_bow
+  name: 附魔长弓
+  type: weapon
+  rarity: rare
+  description: 一把带有风元素附魔的长弓，箭矢飞行速度更快，威力更大。
+  effects:
+    - 造成12-18点物理伤害
+    - 附加5点风元素伤害
+    - 射程增加20%
+  value: 180
+  weight: 1.5
+  image: enchanted_bow.jpg
+
+- id: healing_herbs
+  name: 治疗草药
+  type: consumable
+  rarity: common
+  description: 一束具有治疗效果的常见草药，可以直接使用或用于制作药水。
+  effects:
+    - 恢复20点生命值
+    - 可用于制作治疗药水
+  value: 10
+  weight: 0.1
+  image: healing_herbs.jpg
+
+- id: mana_crystal
+  name: 魔力水晶
+  type: consumable
+  rarity: uncommon
+  description: 一颗蓝色的水晶，内部充满了纯净的魔力能量，使用后可恢复魔力。
+  effects:
+    - 恢复40点魔力值
+  value: 30
+  weight: 0.2
+  image: mana_crystal.jpg
+
+- id: ancient_tome
+  name: 古代典籍
+  type: quest_item
+  description: 一本皮革封面的厚重书籍，书页已经泛黄，但上面的符文和图案依然清晰可见。书中记载了远古文明的知识和魔法。
+  rarity: rare
+  value: 300
+  weight: 2.0
+  image: ancient_tome.jpg
+  lore: "这本书是远古艾尔德拉文明的遗物，据说是由当时最伟大的法师编纂而成。任何能够破解其中秘密的人都将获得强大的魔法知识。"
+  quest_related: true
+  readable: true
+  content: "内容被加密，需要特殊方法解读"
+
+- id: plate_armor
+  name: 板甲
+  type: armor
+  description: 一套由多块金属板精心打造而成的全身护甲，提供最高级别的物理防护。虽然笨重，但在面对强大敌人时是生存的关键。
+  effects:
+    - effect: defense
+      value: 40
+      type: physical
+    - effect: movement_speed
+      value: -10
+      duration: 0
+  rarity: rare
+  value: 350
+  weight: 25.0
+  durability: 150
+  equip_slot: chest
+  requirements:
+    strength: 8
+    level: 10
+  image: plate_armor.jpg
+  lore: "每一套真正的板甲都是锻造师的杰作，需要数月时间精心打造。这种护甲曾在无数战争中证明了自己的价值，拯救了众多战士的生命。"
+
+- id: swamp_antidote
+  name: 沼泽解毒剂
+  type: consumable
+  description: 一瓶浑浊的灰绿色液体，气味刺鼻但效果显著。能够快速中和禁忌沼泽中各种有毒生物的毒素。
+  effects:
+    - effect: cure_poison
+      value: 100
+      duration: 0
+    - effect: poison_resistance
+      value: 50
+      duration: 300
+  rarity: uncommon
+  value: 30
+  weight: 0.5
+  stackable: true
+  max_stack: 5
+  image: swamp_antidote.jpg
+  lore: "摩珂拉是唯一知道如何制作这种解毒剂的人。沼泽中的许多植物和生物都含有剧毒，没有这种解毒剂，很少有人能从深处归来。"
+
+- id: magic_staff
+  name: 魔法法杖
+  type: weapon
+  rarity: rare
+  description: 一根镶嵌着蓝宝石的木制法杖，能够增强施法者的魔法威力。
+  effects:
+    - 基础魔法伤害10-15点
+    - 魔法效果增强20%
+    - 减少10%魔法消耗
+  value: 200
+  weight: 2.0
+  image: magic_staff.jpg
+
+- id: fishing_rod
+  name: 钓鱼竿
+  type: tool
+  description: 一根做工精良的钓鱼竿，由柔韧的木材制成，搭配高质量的鱼线和钩子。是在河边或海边放松的理想工具。
+  rarity: common
+  value: 25
+  weight: 2.0
+  durability: 50
+  image: fishing_rod.jpg
+  lore: "钓鱼不仅是获取食物的方式，更是一种放松心灵的艺术。港口的渔民们相信，一个人的性格可以从他钓鱼的方式中看出来。"
+  use_skill: fishing
+
+- id: enchanted_map
+  name: 魔法地图
+  type: tool
+  description: 一张能够自动更新的魔法地图，会根据持有者的位置变化显示周围的地形和重要地点。边缘装饰着精美的符文图案。
+  effects:
+    - effect: reveal_map
+      value: 100
+      duration: 0
+  rarity: rare
+  value: 200
+  weight: 0.3
+  image: enchanted_map.jpg
+  lore: "这种地图是法师和制图师合作的产物，融合了空间魔法与精确测绘。在复杂多变的地形中，它可能是生存与死亡的关键区别。"
+
+- id: dragon_scale
+  name: 龙鳞
+  type: material
+  description: 一片巨大的鳞片，表面有着复杂的纹理和金属般的光泽。即使离开龙身多年，依然保持着温暖和难以置信的硬度。
+  rarity: epic
+  value: 1000
+  weight: 5.0
+  stackable: true
+  max_stack: 10
+  image: dragon_scale.jpg
+  lore: "龙是世界上最强大也最稀少的生物，它们的鳞片是制作顶级魔法装备的珍贵材料。有传言说，穿戴由龙鳞制成的盔甲可以获得龙的某些力量。"
+  crafting_material: true
+
+- id: moonlight_crystal
+  name: 月光水晶
+  type: material
+  description: 一块半透明的水晶，即使在黑暗中也能发出柔和的银色光芒。手持它时能感受到一种宁静的能量流动。
+  rarity: rare
+  value: 400
+  weight: 1.0
+  stackable: true
+  max_stack: 20
+  image: moonlight_crystal.jpg
+  lore: "月光水晶只在特定的洞穴中生长，且只在满月之夜才会显现。据说这种水晶能够吸收并储存月亮的魔法能量，是强大魔法道具的核心材料。"
+  crafting_material: true
+
+- id: kings_letter
+  name: 国王的信函
+  type: quest_item
+  description: 一封盖有王国官方印章的信函，用高质量的羊皮纸书写，内容简洁但语气紧急。
+  rarity: unique
+  value: 0
+  weight: 0.1
+  image: kings_letter.jpg
+  lore: "国王极少直接干预边境事务，这封信的出现意味着事态已经超出了地方官员的处理能力。"
+  quest_related: true
+  readable: true
+  content: "致堡垒指挥官维克托：根据可靠情报，敌国间谍已渗透边境地区，意图窃取古代遗迹中的秘密。务必加强警戒，调查可疑人物。此事关系国家安全，请谨慎处理。——国王亨利四世"
+
+- id: magical_lute
+  name: 魔法鲁特琴
+  type: tool
+  description: 一把制作精美的鲁特琴，琴身由稀有木材雕刻而成，琴弦在微光下闪烁着奇异的光芒。演奏它时，音乐似乎能够影响周围的环境和生物。
+  effects:
+    - effect: charm
+      value: 30
+      duration: 60
+    - effect: calm
+      value: 40
+      duration: 60
+  rarity: epic
+  value: 800
+  weight: 2.5
+  durability: 70
+  image: magical_lute.jpg
+  lore: "传说这把琴是由精灵工匠和人类音乐大师合作制作的，融合了两个种族的音乐精髓。真正的大师能够用它创造出改变现实的旋律。"
+  use_skill: performance
+
+- id: camp_kit
+  name: 野营套装
+  type: tool
+  description: 一套包含帐篷、睡袋和基本生存工具的便携野营装备。经过特殊设计，虽然功能齐全但体积小重量轻，是长途旅行的必备品。
+  effects:
+    - effect: rest_quality
+      value: 50
+      duration: 0
+  rarity: common
+  value: 75
+  weight: 5.0
+  durability: 30
+  image: camp_kit.jpg
+  lore: "这种野营套装的设计融合了多个冒险家几十年的经验教训。有句老话说：一个明智的冒险者宁可多带一个野营套装，也不要带一袋多余的金币。"
+
+- id: spirit_gem
+  name: 灵魂宝石
+  type: quest_item
+  description: 一颗拳头大小的紫色宝石，内部似乎有雾气在不断流动。当你凝视它时，仿佛能听到遥远的低语声。
+  rarity: legendary
+  value: 2000
+  weight: 2.0
+  image: spirit_gem.jpg
+  lore: "灵魂宝石是远古法师用来封印强大灵体的工具。传说每颗宝石中都封印着一个古老的意识，既可能是智慧的源泉，也可能是可怕的诅咒。"
+  quest_related: true
+
+- id: shadow_cloak
+  name: 暗影斗篷
+  type: armor
+  description: 一件由特殊材料制成的斗篷，颜色深不见底，穿戴后似乎能够吸收周围的光线。在阴影中几乎能让穿戴者完全隐形。
+  effects:
+    - effect: stealth
+      value: 75
+      duration: 0
+    - effect: darkness_resistance
+      value: 50
+      duration: 0
+  rarity: epic
+  value: 950
+  weight: 3.0
+  durability: 65
+  equip_slot: back
+  requirements:
+    agility: 12
+    level: 15
+  image: shadow_cloak.jpg
+  lore: "这种斗篷的制作方法是由一个古老的刺客组织所创，据说材料中融入了暗影位面的本质。拥有一件这样的斗篷标志着你已经得到了某些隐秘势力的认可。"

@@ -1,0 +1,466 @@
+races:
+  - id: human
+    name: 人类
+    description: 适应力强、资源丰富，是大陆上最常见的种族。
+    attributes:
+      strength: 5
+      intelligence: 5
+      charisma: 5
+      luck: 5
+
+  - id: elf
+    name: 精灵
+    description: 长寿且优雅，与自然有着深厚联系的种族。
+    attributes:
+      strength: 3
+      intelligence: 7
+      charisma: 6
+      luck: 4
+
+  - id: dwarf
+    name: 矮人
+    description: 坚韧耐力强，工艺精湛的山地居民。
+    attributes:
+      strength: 7
+      intelligence: 4
+      charisma: 3
+      luck: 6
+
+  - id: orc
+    name: 兽人
+    description: 强壮且勇猛，有着丰富的部落文化和战士传统。
+    attributes:
+      strength: 8
+      intelligence: 3
+      charisma: 2
+      luck: 4
+
+  - id: halfling
+    name: 半身人
+    description: 矮小敏捷，性格友善，精通农耕和烹饪。
+    attributes:
+      strength: 3
+      intelligence: 5
+      charisma: 7
+      luck: 7
+
+classes:
+  - id: warrior
+    name: 战士
+    description: 精通武器与战斗技巧的职业。
+    attributes:
+      strength: +2
+      intelligence: 0
+      charisma: 0
+      luck: 0
+
+  - id: mage
+    name: 法师
+    description: 掌握神秘魔法能量的学者。
+    attributes:
+      strength: -1
+      intelligence: +3
+      charisma: 0
+      luck: 0
+
+  - id: rogue
+    name: 盗贼
+    description: 灵巧善变，精通潜行与机关。
+    attributes:
+      strength: 0
+      intelligence: +1
+      charisma: +1
+      luck: +1
+
+  - id: cleric
+    name: 牧师
+    description: 信仰神灵，掌握治愈与神圣法术的虔诚者。
+    attributes:
+      strength: 0
+      intelligence: +1
+      charisma: +2
+      luck: 0
+
+  - id: ranger
+    name: 游侠
+    description: 野外生存专家，擅长追踪和远程攻击。
+    attributes:
+      strength: +1
+      intelligence: +1
+      charisma: 0
+      luck: +1
+
+# 自定义属性点数量
+attributePoints: 5
+
+randomEvents:
+  - id: bandit
+    weight: 30
+    text: "路上你遇到了一伙土匪，他们对你虎视眈眈。"
+    choices:
+      - id: "fight"
+        text: "拔出武器应战"
+        condition: "state.attributes.strength > 6"
+        effect: "state.inventory.push('小钱袋')"
+        result: "你击退了土匪，并从他们身上搜出一个小钱袋。"
+
+      - id: "flee"
+        text: "迅速逃跑"
+        condition: "state.attributes.luck > 4"
+        effect: "state.attributes.strength -= 1"
+        result: "你设法逃脱，但在慌乱中扭伤了脚踝。"
+
+      - id: "negotiate"
+        text: "尝试交涉"
+        condition: "state.attributes.charisma > 5"
+        effect: "state.gold -= 5"
+        result: "你成功说服土匪放你一马，但付出了5金币的代价。"
+
+  - id: druid
+    weight: 10
+    text: "森林深处，一位德鲁伊向你招手。"
+    choices:
+      - id: "approach"
+        text: "靠近交谈"
+        condition: ""
+        effect: "state.attributes.intelligence += 1"
+        result: "德鲁伊分享了一些古老的知识，你感到更加睿智。"
+
+      - id: "ignore"
+        text: "无视并离开"
+        condition: ""
+        effect: ""
+        result: "你选择继续前进，离开了这片森林。"
+
+  - id: merchant
+    weight: 25
+    text: "你遇到了一位旅行商人，他的货车上装满了各种物品。"
+    choices:
+      - id: "trade"
+        text: "查看他的商品"
+        condition: "state.gold > 0"
+        effect: "state.inventory.push('神秘药水'); state.gold -= 3"
+        result: "你用3金币购买了一瓶神秘药水。"
+
+      - id: "ignore_merchant"
+        text: "继续前进"
+        condition: ""
+        effect: ""
+        result: "你向商人点头致意，然后继续你的旅程。"
+
+  - id: wounded_traveler
+    weight: 20
+    text: "路边躺着一位受伤的旅行者，他看起来情况不妙。"
+    choices:
+      - id: "help"
+        text: "提供帮助"
+        condition: ""
+        effect: "state.karma += 1; state.gold += 2"
+        result: "你帮助了旅行者，他感激地给了你2金币作为谢礼。"
+
+      - id: "rob"
+        text: "趁机抢劫"
+        condition: ""
+        effect: "state.karma -= 2; state.gold += 5"
+        result: "你抢走了旅行者的钱袋，获得了5金币，但良心有些不安。"
+
+  - id: lost_child
+    weight: 15
+    text: "一个小孩在路边哭泣，似乎迷路了。"
+    choices:
+      - id: "help_child"
+        text: "帮助小孩找到家"
+        condition: ""
+        effect: "state.karma += 2; state.time += 1"
+        result: "你花了些时间帮助小孩找到了家，他的父母非常感激。"
+
+      - id: "ignore_child"
+        text: "这不关你的事"
+        condition: ""
+        effect: "state.karma -= 1"
+        result: "你选择不管小孩的事，继续自己的旅程。"
+
+  - id: mysterious_chest
+    weight: 20
+    text: "路边有一个神秘的箱子，看起来已经在那里很久了。"
+    choices:
+      - id: "open_chest"
+        text: "打开箱子"
+        condition: ""
+        effect: "if(Math.random() > 0.5) {state.inventory.push('金币袋'); state.gold += 10;} else {state.health -= 10;}"
+        result: "你小心翼翼地打开箱子..."
+
+      - id: "leave_chest"
+        text: "不去碰它"
+        condition: ""
+        effect: ""
+        result: "你决定不去冒险，继续前进。"
+
+  - id: wolf
+    weight: 30
+    text: "一只饥饿的狼挡住了你的去路，低声咆哮着。"
+    choices:
+      - id: "fight_wolf"
+        text: "与狼战斗"
+        condition: "state.attributes.strength > 4"
+        effect: "state.inventory.push('狼皮'); state.attributes.strength += 1"
+        result: "你击败了狼，获得了一张狼皮，这次战斗让你变得更强壮。"
+
+      - id: "scare_wolf"
+        text: "尝试吓跑狼"
+        condition: ""
+        effect: "if(Math.random() > 0.6) {state.health -= 5;}"
+        result: "你试图吓跑狼，但结果不确定..."
+
+  - id: old_shrine
+    weight: 15
+    text: "你发现了一座古老的神龛，上面覆盖着藤蔓和青苔。"
+    choices:
+      - id: "pray"
+        text: "在神龛前祈祷"
+        condition: ""
+        effect: "state.attributes.luck += 1"
+        result: "你在神龛前虔诚祈祷，感到一股神秘的力量环绕着你，提升了你的幸运。"
+
+      - id: "search_shrine"
+        text: "搜索神龛"
+        condition: ""
+        effect: "if(Math.random() > 0.7) {state.inventory.push('古代护符');} else {state.health -= 3;}"
+        result: "你仔细搜索神龛，希望找到些什么..."
+
+  - id: traveling_bard
+    weight: 20
+    text: "一位游吟诗人坐在路边，弹奏着优美的旋律。"
+    choices:
+      - id: "listen"
+        text: "停下来听他的故事"
+        condition: ""
+        effect: "state.knowledge += 1; state.time += 1"
+        result: "你听了游吟诗人讲述的古老传说，获得了关于这片土地的知识。"
+
+      - id: "give_coin"
+        text: "给他一些金币"
+        condition: "state.gold > 0"
+        effect: "state.gold -= 1; state.karma += 1"
+        result: "你给了游吟诗人一枚金币，他感激地向你鞠躬。"
+
+  - id: rain_storm
+    weight: 25
+    text: "天空突然乌云密布，一场暴雨即将来临。"
+    choices:
+      - id: "seek_shelter"
+        text: "寻找避雨的地方"
+        condition: ""
+        effect: "state.time += 1"
+        result: "你找到了一个小山洞避雨，等待暴雨过去花了些时间。"
+
+      - id: "continue_journey"
+        text: "冒雨前进"
+        condition: ""
+        effect: "state.health -= 2"
+        result: "你选择冒雨前进，结果淋得浑身湿透，感到有些不适。"
+
+  - id: fork_in_road
+    weight: 15
+    text: "你来到一个岔路口，没有任何标记指示方向。"
+    choices:
+      - id: "left_path"
+        text: "走左边的小路"
+        condition: ""
+        effect: "state.path = 'left'"
+        result: "你选择了左边的小路，继续前进。"
+
+      - id: "right_path"
+        text: "走右边的大道"
+        condition: ""
+        effect: "state.path = 'right'"
+        result: "你选择了右边的大道，继续你的旅程。"
+
+  - id: fallen_tree
+    weight: 20
+    text: "一棵大树倒在路中间，挡住了去路。"
+    choices:
+      - id: "climb_over"
+        text: "爬过树干"
+        condition: ""
+        effect: "if(state.attributes.strength < 4) {state.health -= 2;}"
+        result: "你尝试爬过树干..."
+
+      - id: "find_way_around"
+        text: "寻找绕行的路"
+        condition: ""
+        effect: "state.time += 1"
+        result: "你花了些时间找到了绕过大树的路。"
+
+  - id: strange_mushrooms
+    weight: 15
+    text: "你在路边发现了一丛奇怪的蘑菇，颜色鲜艳异常。"
+    choices:
+      - id: "eat_mushroom"
+        text: "尝一个蘑菇"
+        condition: ""
+        effect: "if(Math.random() > 0.5) {state.health += 5;} else {state.health -= 8;}"
+        result: "你冒险尝了一个蘑菇..."
+
+      - id: "collect_mushrooms"
+        text: "采集蘑菇带走"
+        condition: ""
+        effect: "state.inventory.push('奇异蘑菇')"
+        result: "你小心地采集了一些蘑菇，放入背包。"
+
+  - id: abandoned_cart
+    weight: 20
+    text: "路边有一辆被遗弃的货车，看起来已经在那里很久了。"
+    choices:
+      - id: "search_cart"
+        text: "搜索货车"
+        condition: ""
+        effect: "if(Math.random() > 0.3) {state.inventory.push('旅行干粮'); state.gold += 2;}"
+        result: "你决定搜索货车，看看能否找到有用的东西。"
+
+      - id: "pass_by"
+        text: "从旁边经过"
+        condition: ""
+        effect: ""
+        result: "你选择不去碰那辆可能属于别人的货车，继续前进。"
+
+regions:
+  - id: forest
+    name: 翡翠森林
+    description: "茂密的森林，充满了未知的生物和古老的魔法。"
+    events: [
+      "druid",
+      "wolf",
+      "mysterious_chest",
+      "old_shrine",
+      "strange_mushrooms",
+      "rain_storm",
+    ]
+
+  - id: plains
+    name: 金色平原
+    description: "广阔的草原，是商队和旅人的常见路线。"
+    events: [
+      "bandit",
+      "merchant",
+      "wounded_traveler",
+      "traveling_bard",
+      "fork_in_road",
+      "abandoned_cart",
+    ]
+
+  - id: mountains
+    name: 灰脊山
+    description: "陡峭的山脉，空气稀薄但矿藏丰富。"
+    events: [
+      "wolf",
+      "old_shrine",
+      "fallen_tree",
+      "rain_storm",
+      "mysterious_chest",
+    ]
+
+  - id: river
+    name: 银月河谷
+    description: "蜿蜒的河流和肥沃的土地，村庄星布。"
+    events: [
+      "merchant",
+      "wounded_traveler",
+      "lost_child",
+      "traveling_bard",
+      "rain_storm",
+    ]
+
+  - id: city
+    name: 黎明之城
+    description: "繁华的大型城市，各种机遇和危险共存。"
+    events: ["merchant", "lost_child", "traveling_bard"]
+
+  - id: dungeon
+    name: 遗忘地下城
+    description: "古老的地下迷宫，隐藏着宝藏和危险。"
+    events: ["mysterious_chest", "wolf", "strange_mushrooms", "old_shrine"]
+
+endings:
+  - id: hero_ending
+    title: "英雄的凯旋"
+    condition: "state.karma > 10 && state.questsCompleted > 5"
+    text: |
+      在多次冒险和善举之后，你的名声在整个大陆上传开。人们称赞你的英勇和善良，村庄和城市为你庆祝。
+
+      国王亲自召见了你，授予你"埃尔德拉守护者"的称号，以及一片领地作为奖励。
+
+      你的故事将被记入史册，成为未来世代冒险者的传说和灵感。
+    image: "/images/hero_ending.jpg"
+
+  - id: wealth_ending
+    title: "财富与荣耀"
+    condition: "state.gold > 100"
+    text: |
+      你积累了惊人的财富，成为了大陆上最富有的人之一。你在黎明之城购买了一座豪宅，过着奢华的生活。
+
+      商人们争相与你合作，贵族们邀请你参加宴会。你的财富为你带来了权力和影响力。
+
+      虽然你的冒险生涯可能告一段落，但你的传奇故事才刚刚开始。
+    image: "/images/wealth_ending.jpg"
+
+  - id: knowledge_ending
+    title: "智慧的追求者"
+    condition: "state.attributes.intelligence > 10 && state.knowledge > 8"
+    text: |
+      你对知识的渴望引导你收集了大量的古籍和神秘文献。你的智慧和学识让你成为了备受尊敬的学者。
+
+      你在黎明之城创立了一所学院，吸引了来自各地的求知者。你的研究突破了魔法的新领域，为世界带来了进步。
+
+      你的名字将与伟大的思想家和发明家一起被后人铭记。
+    image: "/images/knowledge_ending.jpg"
+
+  - id: dark_ending
+    title: "黑暗的道路"
+    condition: "state.karma < -10"
+    text: |
+      你走上了一条黑暗的道路，你的名字成为了恐惧的代名词。村庄在听到你接近的消息时会关闭城门。
+
+      你积累了财富和力量，但失去了自己的灵魂。你建立了一个由亡命之徒组成的小型军队，统治着一片阴影笼罩的领地。
+
+      你获得了你想要的一切，但内心的空虚从未消失。这是力量的代价。
+    image: "/images/dark_ending.jpg"
+
+  - id: peaceful_ending
+    title: "平静的生活"
+    condition: "state.time > 30 && state.karma > 0"
+    text: |
+      经过多年的冒险，你决定在一个安静的村庄定居下来。你用积攒的金币买了一块土地，建造了一座舒适的房子。
+
+      村民们尊重你的经历和智慧，经常向你寻求建议。你偶尔会讲述你的冒险故事，吸引着村里的孩子们围坐在你周围。
+
+      你过上了平静而满足的生活，偶尔也会怀念那些冒险的日子，但你知道，你已经找到了真正的宝藏：一个称之为家的地方。
+    image: "/images/peaceful_ending.jpg"
+
+  - id: mystery_ending
+    title: "消失在迷雾中"
+    condition: "state.questsCompleted > 10 && state.specialItems.includes('古代卷轴')"
+    text: |
+      你解开了古老卷轴的谜团，发现了通往另一个世界的门。出于好奇或冒险精神，你决定踏入未知。
+
+      当你穿过那扇门，感受到一股强大的能量包围着你。在埃尔德拉大陆上，人们只知道你突然消失了，留下无数猜测和传说。
+
+      也许有一天，你会从那神秘的维度回来，带着新的知识和力量。但现在，你的旅程还在继续，只是在一个全新的世界。
+    image: "/images/mystery_ending.jpg"
+
+starting:
+  node: "start"
+  attributes:
+    strength: 5
+    intelligence: 5
+    charisma: 5
+    luck: 5
+  inventory: []
+  gold: 10
+  health: 100
+  karma: 0
+  knowledge: 0
+  time: 0
+  questsCompleted: 0
+  specialItems: []
+  path: ""

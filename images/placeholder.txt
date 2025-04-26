@@ -1,0 +1,8 @@
+请在此目录放置以下图片文件：
+
+1. dawn_city.jpg - 用于开始场景
+2. market.jpg - 用于集市场景
+3. tavern.jpg - 用于酒馆场景
+4. bg-pattern.png - 用于网页背景
+
+您可以从免费图片网站如 Unsplash、Pexels 或 Pixabay 获取适合的图片。

@@ -1,0 +1,546 @@
+# NPC元数据配置
+# 定义游戏世界中的重要角色及其特征
+
+- id: innkeeper_morgan
+  name: 摩根老板
+  race: 人类
+  profession: 旅店老板
+  personality: 热情好客，喜欢收集旅行者的故事
+  goals:
+    - 经营好旅店
+    - 收集有趣的故事和消息
+    - 保持与城市高层的良好关系
+  knowledge:
+    - 城市中的最新流言
+    - 著名冒险者的行踪
+    - 周边地区的危险情况
+  attitude: 友好
+  possessions:
+    - 旧钥匙串
+    - 精美的酒杯收藏
+    - 来自远方的纪念品
+
+- id: merchant_ella
+  name: 艾拉商人
+  race: 半身人
+  profession: 旅行商人
+  personality: 精明能干，眼光敏锐，对生意有独特的直觉
+  goals:
+    - 寻找稀有商品
+    - 扩大贸易网络
+    - 积累财富
+  knowledge:
+    - 各地的商品价格
+    - 贸易路线的安全情况
+    - 各种货币和宝石的鉴别
+  attitude: 友好但谨慎
+  possessions:
+    - 精致的珠宝秤
+    - 多口袋旅行外套
+    - 防水商品清单
+
+- id: guard_captain_roland
+  name: 罗兰队长
+  race: 人类
+  profession: 城市守卫队长
+  personality: 严肃认真，对职责极为看重，但内心温和
+  goals:
+    - 维护城市的和平与秩序
+    - 训练守卫队成员
+    - 侦破城市中的犯罪活动
+  knowledge:
+    - 城市法律法规
+    - 犯罪分子的活动模式
+    - 城市防御系统
+  attitude: 严肃但公正
+  possessions:
+    - 家族传承的剑
+    - 城市守卫徽章
+    - 城市地图与巡逻记录
+
+- id: mage_seraphina
+  name: 塞拉菲娜法师
+  race: 精灵
+  profession: 学院魔法师
+  personality: 聪明好学，略带神秘感，对古老魔法有着浓厚兴趣
+  goals:
+    - 研究失落的魔法知识
+    - 探索魔法的本质
+    - 保护古老的魔法遗迹
+  knowledge:
+    - 元素魔法理论
+    - 古代符文与魔法语言
+    - 魔法生物学
+  attitude: 神秘而友好
+  possessions:
+    - 魔法水晶球
+    - 手写魔法笔记
+    - 稀有材料收藏
+
+- id: blacksmith_gorn
+  name: 高恩铁匠
+  race: 矮人
+  profession: 铁匠大师
+  personality: 固执认真，对自己的作品极为骄傲，不善言辞但内心热情
+  goals:
+    - 打造传说中的武器
+    - 寻找稀有金属
+    - 传承锻造技艺
+  knowledge:
+    - 金属冶炼技术
+    - 古代兵器设计
+    - 魔法附魔原理
+  attitude: 粗犷但诚实
+  possessions:
+    - 祖传铁锤
+    - 珍贵金属样本
+    - 古代武器图纸
+
+- id: healer_lyra
+  name: 莱拉医者
+  race: 人类
+  profession: 草药医师
+  personality: 温柔耐心，关心每一位患者，有着强烈的责任感
+  goals:
+    - 治愈疾病和伤痛
+    - 寻找稀有治疗草药
+    - 研究新的治疗方法
+  knowledge:
+    - 草药学
+    - 伤口处理技术
+    - 常见疾病与治疗
+  attitude: 温和且富有同情心
+  possessions:
+    - 医药包
+    - 珍贵草药收藏
+    - 医学手札
+
+- id: ranger_thorne
+  name: 索恩游侠
+  race: 人类
+  profession: 森林游侠
+  personality: 独立自主，与自然亲近，警觉而敏锐
+  goals:
+    - 保护森林和野生动物
+    - 追踪危险的野兽
+    - 寻找失落的森林古迹
+  knowledge:
+    - 野外生存技能
+    - 动植物知识
+    - 地形导航与追踪
+  attitude: 沉默但可靠
+  possessions:
+    - 精准猎弓
+    - 兽皮地图
+    - 动物追踪札记
+
+- id: tavern_keeper_harold
+  name: 哈罗德酒馆老板
+  race: 人类
+  profession: 酒馆老板
+  personality: 健谈幽默，记性极好，能记住每位顾客的喜好
+  goals:
+    - 经营最受欢迎的酒馆
+    - 收集各地异闻
+    - 保持酒馆的特色氛围
+  knowledge:
+    - 各种酒类的调配
+    - 城市中的秘密与流言
+    - 当地冒险者的情报
+  attitude: 热情开朗
+  possessions:
+    - 家族秘方酒谱
+    - 从冒险者那里收集的纪念品
+    - 酒馆账本
+
+- id: elder_moira
+  name: 莫伊拉长老
+  race: 精灵
+  profession: 村庄长老
+  personality: 智慧睿智，沉稳大气，思维深远
+  goals:
+    - 保护村庄的安全
+    - 传承古老的知识
+    - 维持与自然的平衡
+  knowledge:
+    - 精灵古老历史
+    - 自然魔法
+    - 预言与占卜
+  attitude: 庄重而善良
+  possessions:
+    - 精灵族徽
+    - 祖传水晶
+    - 古老卷轴收藏
+
+- id: mysterious_stranger
+  name: 神秘旅者
+  race: 未知
+  profession: 不详
+  personality: 深不可测，言语谨慎，眼神锐利
+  goals:
+    - 寻找某种神秘物品
+    - 观察世界的变化
+    - 隐藏自己的真实身份
+  knowledge:
+    - 古老预言
+    - 被遗忘的历史
+    - 世界各地的秘密
+  attitude: 谨慎而神秘
+  possessions:
+    - 奇特的挂坠
+    - 神秘的地图
+    - 古老的钥匙
+
+- id: wandering_elf
+  name: 漫游精灵 艾洛希尔
+  role: 探险家
+  description: 一位来自古老精灵王国的旅行者，喜欢收集奇特的植物和魔法物品。性格和善但略显神秘，对低语森林了如指掌。
+  personality: 好奇心强，友善，略带神秘感
+  knowledge:
+    - 森林历史
+    - 稀有植物
+    - 隐秘路径
+  quests:
+    - 寻找稀有萤火
+    - 调查森林异象
+  dialogue_style: 优雅而充满诗意，经常使用古老精灵语中的词汇
+  image: wandering_elf.jpg
+
+- id: village_elder
+  name: 村长艾德里安
+  type: quest_giver
+  description: 一位年迈但精神矍铄的老人，白发和胡须修剪得很整齐。他的眼睛中闪烁着智慧的光芒，是低语村最受尊敬的人物。作为村长多年，他了解这片土地上的每一个秘密和传说。
+  occupation: 村长
+  default_location: whisper_village
+  dialogue:
+    greeting: "啊，又是一位旅行者。欢迎来到低语村，希望森林的低语没有让你迷失方向。"
+    farewell: "愿古老之树的庇护与你同在，旅行者。无论你去往何方，记得这里永远欢迎你回来。"
+    quests:
+      - id: elder_quest_1
+        title: "森林的秘密"
+        description: "森林深处的遗迹最近出现了异常活动，请调查一下。"
+      - id: elder_quest_2
+        title: "寻找古老的地图"
+        description: "传说中有一张标记着古代宝藏位置的地图，分散在王国各地。"
+  image: village_elder.jpg
+  voice: elder_voice.mp3
+  schedule:
+    morning: village_square
+    afternoon: whisper_village
+    evening: village_tavern
+    night: whisper_village
+  relationships:
+    - npc_id: tavern_keeper
+      relation: "老朋友"
+    - npc_id: forest_hermit
+      relation: "童年玩伴"
+
+- id: tavern_keeper
+  name: 罗莎·艾尔
+  type: merchant
+  description: 一位魁梧的中年女性，深红色的头发扎成一个实用的发髻。她的笑容温暖而真诚，但眼神锐利，能看穿顾客的谎言。作为酒馆老板，她掌握着许多来自四面八方的情报。
+  occupation: 酒馆老板
+  default_location: village_tavern
+  dialogue:
+    greeting: "嘿，旅行者！欢迎来到'醉树叶'。要来一杯我们自酿的蜜酒吗？或者你是来打听消息的？"
+    farewell: "路上小心，朋友。记住，无论何时回来，这里总有一杯温酒等着你。"
+    quests:
+      - id: tavern_quest_1
+        title: "稀有酒材"
+        description: "罗莎需要一些特殊的沼泽草药来酿造她的秘方酒。"
+  image: tavern_keeper.jpg
+  voice: tavern_keeper_voice.mp3
+  shop_inventory:
+    - item_id: healing_potion
+      price: 15
+    - item_id: forest_herbs
+      price: 8
+  schedule:
+    morning: village_tavern
+    afternoon: village_tavern
+    evening: village_tavern
+    night: whisper_village
+  relationships:
+    - npc_id: village_elder
+      relation: "老朋友"
+    - npc_id: blacksmith
+      relation: "生意伙伴"
+
+- id: forest_hermit
+  name: 格雷格·林地
+  type: mentor
+  description: 一位隐居在森林中的古怪老人，穿着用树皮和动物皮毛制成的衣物。他的灰色胡子几乎垂到腰部，头发凌乱。尽管看起来疯疯癫癫，但他拥有关于森林和草药的渊博知识。
+  occupation: 草药师
+  default_location: hermit_cabin
+  dialogue:
+    greeting: "嗯？有人来了？很少有人愿意走这么远来见一个老疯子。你是来学习还是来打扰我的？"
+    farewell: "带上这些草药，它们会在你需要时保护你。记住树木的教诲，它们比任何人都要古老和智慧。"
+    quests:
+      - id: hermit_quest_1
+        title: "草药收集"
+        description: "格雷格需要各种稀有草药来制作强力药剂。"
+      - id: hermit_quest_2
+        title: "森林之声"
+        description: "格雷格声称森林在向他诉说危险的预兆，需要调查。"
+  image: forest_hermit.jpg
+  voice: hermit_voice.mp3
+  skills_taught:
+    - skill_id: herb_lore
+      price: 50
+    - skill_id: potion_making
+      price: 75
+  schedule:
+    morning: forest_clearing
+    afternoon: hermit_cabin
+    evening: hermit_cabin
+    night: hermit_cabin
+  relationships:
+    - npc_id: village_elder
+      relation: "童年玩伴"
+    - npc_id: swamp_hag
+      relation: "敌对"
+
+- id: wandering_elf
+  name: 莉莉安·星歌
+  type: companion
+  description: 一位优雅的精灵游侠，有着银白色的长发和翡翠绿的眼睛。她穿着实用的皮革护甲，背着一把精美的长弓。她在不同地区游历，收集传说和故事，偶尔为有需要的村民提供帮助。
+  occupation: 游侠
+  default_location: forest_entrance
+  dialogue:
+    greeting: "你好，旅行者。森林今天特别安静，不是吗？或许这是好事，也可能预示着什么..."
+    farewell: "愿星光指引你的道路，或许我们会在其他地方再次相遇。"
+    quests:
+      - id: elf_quest_1
+        title: "追寻星歌"
+        description: "莉莉安正在寻找一件失落的精灵文物，据说它在远古遗迹中。"
+  image: wandering_elf.jpg
+  voice: elf_voice.mp3
+  companion_stats:
+    health: 120
+    damage: 25
+    skills:
+      - archery
+      - tracking
+  schedule:
+    morning: forest_entrance
+    afternoon: forest_clearing
+    evening: riverside_path
+    night: hermit_cabin
+  relationships:
+    - npc_id: forest_hermit
+      relation: "尊敬"
+    - npc_id: guardian_construct
+      relation: "警惕"
+
+- id: blacksmith
+  name: 托尔·铁手
+  type: merchant
+  description: 一位肌肉发达的中年男子，光头，胡子浓密，手臂上有多处烧伤留下的疤痕。他性格直率热情，以制作高品质武器和盔甲而闻名于整个地区。
+  occupation: 铁匠
+  default_location: blacksmith_shop
+  dialogue:
+    greeting: "好啊！来看看最好的武器装备吗？保证比那些城里制造的垃圾结实十倍！"
+    farewell: "记得定期保养你的武器！没什么比生锈的剑更让人丢脸的了。"
+    quests:
+      - id: blacksmith_quest_1
+        title: "寻找稀有金属"
+        description: "托尔需要一种特殊的矿石来锻造传说中的武器。"
+  image: blacksmith.jpg
+  voice: blacksmith_voice.mp3
+  shop_inventory:
+    - item_id: steel_sword
+      price: 150
+    - item_id: leather_armor
+      price: 120
+    - item_id: plate_armor
+      price: 350
+  schedule:
+    morning: blacksmith_shop
+    afternoon: blacksmith_shop
+    evening: village_tavern
+    night: whisper_village
+  relationships:
+    - npc_id: tavern_keeper
+      relation: "生意伙伴"
+    - npc_id: citadel_commander
+      relation: "尊敬"
+
+- id: treasure_hunter
+  name: 杰克·寻宝
+  type: quest_giver
+  description: 一位穿着褪色冒险服的中年男子，脸上有一道显眼的疤痕。他总是戴着一顶破旧的宽边帽，腰间挂着一把短剑和各种工具。作为一名资深的寻宝猎人，他对历史和宝藏有着无尽的热情。
+  occupation: 寻宝猎人
+  default_location: village_tavern
+  dialogue:
+    greeting: "嘿，朋友！你看起来像是个有胆量的冒险者。我可能有些消息对你有用，当然，不是免费的..."
+    farewell: "如果你找到什么闪闪发光的好东西，别忘了老杰克！我知道哪里能卖个好价钱。"
+    quests:
+      - id: treasure_quest_1
+        title: "失落的遗物"
+        description: "杰克听说遗迹中有一件强大的古代文物，需要有人帮他取回。"
+  image: treasure_hunter.jpg
+  voice: treasure_hunter_voice.mp3
+  schedule:
+    morning: ancient_ruins
+    afternoon: ancient_ruins
+    evening: village_tavern
+    night: village_tavern
+  relationships:
+    - npc_id: scholar
+      relation: "竞争对手"
+    - npc_id: guardian_construct
+      relation: "害怕"
+
+- id: swamp_hag
+  name: 摩珂拉
+  type: merchant
+  description: 一位神秘的老妇人，皮肤呈现出不自然的灰绿色，眼睛全黑无瞳。她弯腰驼背，穿着由粗布和奇怪的骨饰制成的长袍。尽管外表吓人，但她对魔法和药剂的知识无人能及。
+  occupation: 女巫
+  default_location: witch_hut
+  dialogue:
+    greeting: "啊，又一个勇敢的灵魂来到我的小屋。是寻求知识，还是被诅咒所困？或者只是愚蠢到迷路了？"
+    farewell: "带上你的药水，孩子。记住我的警告——魔法总是有代价的。现在离开，在沼泽吞噬你之前。"
+    quests:
+      - id: witch_quest_1
+        title: "魔法原料"
+        description: "摩珂拉需要一些稀有材料来制作强大的魔法药剂。"
+  image: swamp_hag.jpg
+  voice: witch_voice.mp3
+  shop_inventory:
+    - item_id: swamp_antidote
+      price: 30
+    - item_id: magic_scroll
+      price: 100
+    - item_id: mystic_amulet
+      price: 250
+  schedule:
+    morning: witch_hut
+    afternoon: forbidden_swamp
+    evening: witch_hut
+    night: witch_hut
+  relationships:
+    - npc_id: forest_hermit
+      relation: "敌对"
+    - npc_id: scholar
+      relation: "谨慎尊重"
+
+- id: guardian_construct
+  name: 石之守卫
+  type: enemy
+  description: 一个由古老魔法创造的石头构造体，高约三米，形似人形但更加粗壮。它的身体上刻满了神秘的符文，眼睛闪烁着魔法的蓝光。作为远古遗迹的守护者，它对所有入侵者保持警惕。
+  occupation: 守卫
+  default_location: temple_interior
+  dialogue:
+    greeting: "警告：检测到未授权访问者。请出示认证或准备迎接防御措施。"
+    farewell: "访问者已离开警戒范围。返回监视模式。"
+  image: guardian_construct.jpg
+  voice: construct_voice.mp3
+  enemy_stats:
+    health: 500
+    damage: 40
+    weakness: magic
+    resistance: physical
+    abilities:
+      - stone_slam
+      - earth_tremor
+  schedule:
+    morning: temple_interior
+    afternoon: ancient_ruins
+    evening: temple_interior
+    night: hidden_treasury
+  relationships:
+    - npc_id: treasure_hunter
+      relation: "敌对"
+    - npc_id: scholar
+      relation: "中立"
+
+- id: scholar
+  name: 普罗斯佩罗·学者
+  type: mentor
+  description: 一位瘦高的中年学者，戴着圆形眼镜，穿着沾满墨水的长袍。他总是带着几本古老的书籍和记笔记用的羊皮纸。作为一名历史学家和魔法研究者，他对远古文明有着近乎疯狂的痴迷。
+  occupation: 学者
+  default_location: temple_interior
+  dialogue:
+    greeting: "啊，您好！您对古代艾尔德拉文明感兴趣吗？我正在研究这些符文，它们蕴含着惊人的知识！"
+    farewell: "愿知识之光照耀您的道路。如果您发现任何古代文物，请务必告诉我！"
+    quests:
+      - id: scholar_quest_1
+        title: "古代文献"
+        description: "普罗斯佩罗需要特定的古代卷轴来完成他的研究。"
+  image: scholar.jpg
+  voice: scholar_voice.mp3
+  skills_taught:
+    - skill_id: ancient_language
+      price: 100
+    - skill_id: magic_theory
+      price: 150
+  schedule:
+    morning: ancient_ruins
+    afternoon: temple_interior
+    evening: temple_interior
+    night: village_tavern
+  relationships:
+    - npc_id: treasure_hunter
+      relation: "竞争对手"
+    - npc_id: swamp_hag
+      relation: "谨慎尊重"
+
+- id: harbor_master
+  name: 马林·波涛
+  type: merchant
+  description: 一位健壮的老水手，皮肤被阳光晒得黝黑，满脸皱纹像是航海图。他留着整齐的白色短胡子，常穿着蓝色的船长外套。作为港口的管理者，他对每艘进出的船只都了如指掌。
+  occupation: 港口管理员
+  default_location: harbor_docks
+  dialogue:
+    greeting: "欢迎来到我们的小港口，陆地人！需要搭船吗？或者只是来看看大海？"
+    farewell: "愿海风与您同行，朋友。如果想离开这个小地方，我的船随时欢迎您。"
+    quests:
+      - id: harbor_quest_1
+        title: "海上救援"
+        description: "一艘商船失踪了，马林需要有人帮忙寻找。"
+  image: harbor_master.jpg
+  voice: harbor_voice.mp3
+  shop_inventory:
+    - item_id: fishing_rod
+      price: 25
+    - item_id: leather_armor
+      price: 100
+  schedule:
+    morning: harbor_docks
+    afternoon: harbor_docks
+    evening: harbor_docks
+    night: harbor_docks
+  relationships:
+    - npc_id: citadel_commander
+      relation: "尊重"
+    - npc_id: tavern_keeper
+      relation: "老客户"
+
+- id: citadel_commander
+  name: 维克托·钢盾
+  type: quest_giver
+  description: 一位年过四十的军官，身材高大健壮，留着整齐的灰白短发和胡须。他的脸上有几道战斗留下的疤痕，眼神锐利而威严。他穿着精致的盔甲，上面有王国的徽记。
+  occupation: 堡垒指挥官
+  default_location: command_hall
+  dialogue:
+    greeting: "站直了，平民！你有何事需要王国军队的注意？"
+    farewell: "为王国效力，公民。记住，我们的刀剑随时准备保护这片土地。"
+    quests:
+      - id: commander_quest_1
+        title: "边境巡逻"
+        description: "维克托怀疑有敌人侦察队在边境活动，需要调查。"
+      - id: commander_quest_2
+        title: "军需物资"
+        description: "堡垒需要补充重要的军需物资，特别是药品和武器。"
+  image: citadel_commander.jpg
+  voice: commander_voice.mp3
+  schedule:
+    morning: citadel_courtyard
+    afternoon: citadel_gates
+    evening: command_hall
+    night: command_hall
+  relationships:
+    - npc_id: blacksmith
+      relation: "尊重"
+    - npc_id: harbor_master
+      relation: "尊重"

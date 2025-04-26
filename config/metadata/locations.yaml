@@ -1,0 +1,401 @@
+- id: whisper_village
+  name: 低语村
+  type: settlement
+  description: 一个坐落在森林边缘的小村庄，以其友好的居民和优质的草药闻名。村庄中心有一个古老的广场，周围环绕着木质房屋和繁忙的商店。空气中弥漫着炊烟和新鲜面包的香气。
+  region: central_realm
+  coordinates:
+    x: 120
+    y: 150
+  connections:
+    - whisper_forest
+    - northern_road
+    - meadow_farmlands
+  points_of_interest:
+    - elder_house
+    - village_tavern
+    - marketplace
+    - blacksmith_forge
+  ambient_sounds: village_ambient.mp3
+  background_music: peaceful_village.mp3
+  weather_patterns:
+    - mostly_sunny
+    - occasional_rain
+  danger_level: 1
+  available_quests:
+    - forest_herbs_gathering
+    - blacksmith_materials
+  lore: "低语村的历史可以追溯到三百年前，当时一群逃离战争的难民在此定居。村名来源于附近森林中的奇特风声，据说这些声音是古老精灵的低语。尽管地处偏远，但由于其草药质量上乘，村庄逐渐成为了重要的贸易站点。"
+
+- id: whisper_forest
+  name: 低语森林
+  type: wilderness
+  description: 一片古老而神秘的森林，高大的树木遮蔽了大部分阳光，地面覆盖着厚厚的苔藓和各种蘑菇。空气中充满了潮湿的泥土气息和若隐若现的低语声，仿佛森林本身在诉说着古老的秘密。
+  region: central_realm
+  coordinates:
+    x: 90
+    y: 160
+  connections:
+    - whisper_village
+    - forbidden_swamp
+    - ancient_ruins
+    - crystal_cave
+  points_of_interest:
+    - ancient_tree
+    - hermit_hut
+    - glowing_pond
+    - fairy_circle
+  ambient_sounds: forest_ambient.mp3
+  background_music: mystic_forest.mp3
+  weather_patterns:
+    - light_fog
+    - gentle_rain
+    - dappled_sunlight
+  danger_level: 3
+  available_quests:
+    - lost_child
+    - magical_herbs
+  lore: "低语森林是中央王国最古老的森林之一，据说在人类到来之前就已经存在。森林中经常能听到神秘的低语声，有人认为这是精灵的遗留意识，也有人认为是森林本身的灵性显现。森林中生长着许多珍稀的魔法草药，但同时也隐藏着各种危险的生物。"
+
+- id: ancient_ruins
+  name: 远古遗迹
+  type: dungeon
+  description: 一座被藤蔓和植物部分吞噬的巨大石质建筑群，残存的墙壁和塔楼上刻满了神秘的符文。入口处有几根巨大的石柱，上面雕刻着看似人类但又有着异常特征的形象。遗迹内部黑暗而潮湿，回荡着滴水声和未知生物的动静。
+  region: central_realm
+  coordinates:
+    x: 70
+    y: 180
+  connections:
+    - whisper_forest
+    - crystal_cave
+  points_of_interest:
+    - main_hall
+    - ritual_chamber
+    - collapsed_library
+    - treasury_vault
+  ambient_sounds: ruins_ambient.mp3
+  background_music: ancient_mystery.mp3
+  weather_patterns:
+    - sheltered
+    - eerie_winds
+  danger_level: 7
+  available_quests:
+    - lost_artifact
+    - decipher_tablets
+  lore: "这座遗迹据信是艾尔德拉文明的重要中心，距今已有上千年历史。艾尔德拉人掌握了强大的魔法知识，但他们的文明却在一夜之间神秘消失。遗迹中留下的文字至今无人能完全破译，其中记载的知识对当代魔法研究具有重大价值。"
+
+- id: crystal_cave
+  name: 水晶洞穴
+  type: dungeon
+  description: 一个隐藏在森林深处的洞穴系统，内部布满了各种颜色的巨大水晶。这些水晶在黑暗中发出柔和的光芒，使整个洞穴呈现出梦幻般的色彩。洞穴的墙壁上偶尔可以看到古老的壁画，描述着未知的仪式和生物。
+  region: central_realm
+  coordinates:
+    x: 65
+    y: 160
+  connections:
+    - whisper_forest
+    - ancient_ruins
+  points_of_interest:
+    - entrance_chamber
+    - moonlight_pool
+    - crystal_garden
+    - deep_sanctuary
+  ambient_sounds: cave_echoes.mp3
+  background_music: crystal_resonance.mp3
+  weather_patterns:
+    - sheltered
+    - underground_mist
+  danger_level: 5
+  available_quests:
+    - lost_miner
+    - moonlight_crystals
+  lore: "水晶洞穴被认为是世界能量的汇聚点之一，这里的水晶能够吸收并存储月亮的魔法能量。古代的魔法师经常来此冥想和研究，洞穴的壁画据信记录了他们的发现和仪式。洞穴深处的月光池每逢满月之夜都会发出强烈的光芒，被认为具有治愈和预言的能力。"
+
+- id: forbidden_swamp
+  name: 禁忌沼泽
+  type: wilderness
+  description: 一片阴郁的沼泽地带，遍布着死亡的树木和危险的泥沼。空气中弥漫着腐烂植物的气味和不祥的迷雾。沼泽中时常传出奇怪的声音，偶尔可见磷火在黑暗中飘动。大部分智慧生物都避开这个地方，只有最勇敢或最绝望的人才会踏入其中。
+  region: central_realm
+  coordinates:
+    x: 110
+    y: 190
+  connections:
+    - whisper_forest
+    - hag_hut
+  points_of_interest:
+    - quicksand_pit
+    - bone_island
+    - gas_vents
+    - witch_stones
+  ambient_sounds: swamp_noises.mp3
+  background_music: forbidding_mists.mp3
+  weather_patterns:
+    - heavy_fog
+    - acidic_rain
+    - stagnant_air
+  danger_level: 8
+  available_quests:
+    - swamp_cure
+    - lost_expedition
+  lore: "禁忌沼泽的形成与一场古老的魔法灾难有关，传说一位强大的法师在这里进行了一场失败的实验，导致了环境的永久扭曲。沼泽中的植物和生物逐渐变异，水和空气中充满了奇怪的能量。尽管危险重重，但沼泽中蕴含着珍贵的魔法材料和药草，吸引着冒险者和学者冒险前往。"
+
+- id: hag_hut
+  name: 沼泽女巫小屋
+  type: building
+  description: 一座建在巨大树桩上的奇怪小屋，周围有骨头和奇怪物品做成的装饰。小屋散发着草药和魔法的混合气味，周围漂浮着几盏发出诡异绿光的灯笼。尽管外表吓人，但这里是沼泽中唯一相对安全的庇护所。
+  region: central_realm
+  coordinates:
+    x: 115
+    y: 200
+  connections:
+    - forbidden_swamp
+  points_of_interest:
+    - brewing_cauldron
+    - herb_collection
+    - bone_chimes
+  ambient_sounds: witch_hut.mp3
+  background_music: mystic_brewing.mp3
+  weather_patterns:
+    - magical_protection
+  danger_level: 4
+  available_quests:
+    - rare_ingredients
+    - curse_removal
+  lore: "这座小屋属于被称为摩珂拉的沼泽女巫，她是唯一能够在禁忌沼泽中自由行动的人类。关于她的来历有很多传说，有人说她是几百岁的不死生物，也有人认为她是被放逐的王室法师。不管真相如何，她对沼泽的了解无人能及，也是制作沼泽解毒剂的唯一知道配方的人。"
+
+- id: mountain_pass
+  name: 风啸山口
+  type: wilderness
+  description: 一条穿越高山的狭窄道路，两侧是陡峭的岩壁和深不见底的峡谷。山口常年刮着强劲的风，发出类似野兽啸叫的声音。道路上散落着旧马车的残骸和商队遗留的物品，诉说着这条路线的危险性。
+  region: northern_realm
+  coordinates:
+    x: 150
+    y: 80
+  connections:
+    - northern_road
+    - frost_peak
+    - dwarven_mines
+  points_of_interest:
+    - abandoned_outpost
+    - wind_altar
+    - rock_bridge
+    - traveler_shrine
+  ambient_sounds: howling_wind.mp3
+  background_music: mountain_journey.mp3
+  weather_patterns:
+    - strong_winds
+    - sudden_snowstorms
+    - clear_cold
+  danger_level: 6
+  available_quests:
+    - missing_caravan
+    - wind_spirit
+  lore: "风啸山口是连接中央王国和北方领地的唯一陆路通道，尽管危险但商队和旅行者别无选择。山口因其特殊的地形会产生奇特的风声，当地人相信这些声音是山中居住的风之精灵的语言。在山口的最高处有一座风之祭坛，据说献祭后可以暂时平息强风，保证安全通行。"
+
+- id: dwarven_mines
+  name: 矮人矿场
+  type: dungeon
+  description: 一座规模宏大的地下矿场，由矮人工匠开凿和维护。入口是一扇雕刻着复杂图案的巨大石门，内部有错综复杂的隧道、宽敞的矿井和壮观的地下厅堂。墙壁上嵌入的魔法水晶提供照明，整个矿场回荡着铁锤敲击和机械运转的声音。
+  region: northern_realm
+  coordinates:
+    x: 130
+    y: 70
+  connections:
+    - mountain_pass
+    - deep_forge
+  points_of_interest:
+    - entrance_hall
+    - main_shaft
+    - gem_seam
+    - living_quarters
+    - ancient_depth
+  ambient_sounds: mine_sounds.mp3
+  background_music: dwarven_industry.mp3
+  weather_patterns:
+    - underground_stable
+  danger_level: 5
+  available_quests:
+    - missing_miners
+    - rare_metal
+    - deep_monster
+  lore: "这座矿场是北方矮人王国的重要资源点，出产高品质的金属和宝石。矿场已经开采了几百年，隧道延伸到了令人难以置信的深度。最深处的区域据说触及了古老的遗迹和未知的危险。矮人们与中央王国保持着良好的贸易关系，允许特定的人类进入矿场的上层区域。"
+
+- id: coastal_town
+  name: 海港镇
+  type: settlement
+  description: 一座繁忙的沿海城镇，拥有宽阔的港口和热闹的市场。石头和木头建造的房屋沿着山坡一直延伸到海边，形成了迷宫般的街道网络。空气中充满了海水、鱼类和香料的混合气味。港口停泊着来自各地的商船，市场上可以找到世界各地的商品。
+  region: eastern_realm
+  coordinates:
+    x: 200
+    y: 150
+  connections:
+    - coastal_road
+    - open_sea
+    - lighthouse_point
+  points_of_interest:
+    - harbor_district
+    - market_square
+    - fisherman_wharf
+    - merchant_guild
+    - seaside_tavern
+  ambient_sounds: harbor_town.mp3
+  background_music: sea_breeze.mp3
+  weather_patterns:
+    - sea_breeze
+    - occasional_storms
+    - foggy_mornings
+  danger_level: 2
+  available_quests:
+    - smuggler_ring
+    - sea_monster
+    - lost_cargo
+  lore: "海港镇建立于200年前，最初只是一个小渔村，随着海上贸易的发展逐渐壮大。镇上居住着来自各个种族和地区的居民，是一个文化融合的中心。镇上的水手和商人带来了许多远方的故事和传说，也吸引了寻求冒险和财富的人们。海港镇的灯塔据说由一位强大的法师设计，能在任何天气条件下指引船只安全回港。"
+
+- id: elven_glade
+  name: 精灵圣林
+  type: settlement
+  description: 一片隐藏在古老森林中的居住区，精灵们的住所与自然环境完美融合，大多建在巨大的活树上或树洞中。圣林中弥漫着魔法的气息，地面上开满了罕见的花朵，树干上缠绕着发光的藤蔓。精灵的音乐和笑声时常在林间回荡。
+  region: western_realm
+  coordinates:
+    x: 50
+    y: 130
+  connections:
+    - western_woods
+    - moonlit_lake
+  points_of_interest:
+    - council_tree
+    - singing_waterfall
+    - memorial_garden
+    - archery_range
+    - moonstone_circle
+  ambient_sounds: elven_forest.mp3
+  background_music: ethereal_voices.mp3
+  weather_patterns:
+    - perpetual_spring
+    - gentle_rain
+    - magical_mist
+  danger_level: 1
+  available_quests:
+    - forest_harmony
+    - lost_artifact
+    - dark_corruption
+  lore: "精灵圣林是西方精灵族最重要的聚居地之一，已经存在了上千年。精灵们通过强大的自然魔法使这片区域处于永恒的春季状态。圣林对外族并不完全封闭，但访客必须经过严格的审核，且需遵守严格的规矩。圣林的中央有一棵巨大的议会树，相传它已经存活了超过一万年，蕴含着世界初始的记忆和智慧。"
+
+- id: dark_fortress
+  name: 暗影堡垒
+  type: dungeon
+  description: 一座建在悬崖边缘的黑色石头堡垒，尖塔高耸入云，城墙上布满了怪异的雕像。堡垒周围笼罩着不自然的黑暗，即使在白天也显得阴森可怖。四周的土地贫瘠，没有植物生长，只有乌鸦和其他食腐动物在附近徘徊。
+  region: southern_realm
+  coordinates:
+    x: 150
+    y: 250
+  connections:
+    - desolate_road
+    - shadow_gate
+  points_of_interest:
+    - main_gate
+    - throne_room
+    - dungeon_cells
+    - ritual_chamber
+    - dark_library
+  ambient_sounds: ominous_ambience.mp3
+  background_music: dark_power.mp3
+  weather_patterns:
+    - perpetual_gloom
+    - thunder_no_rain
+    - cold_winds
+  danger_level: 10
+  available_quests:
+    - defeat_necromancer
+    - rescue_prisoner
+    - steal_artifact
+  lore: "暗影堡垒是南方领地的一个可怕地标，据说是几百年前由一位堕落的大法师建造，用于进行禁忌的魔法实验。尽管原来的主人已经不在，但堡垒似乎总是吸引新的黑暗力量占据。当地人避之不及，只有那些寻求力量不惜代价的人或被派来消灭邪恶的勇士才会接近这个地方。"
+
+- id: desert_oasis
+  name: 沙漠绿洲
+  type: settlement
+  description: 一片在广阔沙漠中的生命绿地，中心是一潭清澈的泉水，周围生长着棕榈树和各种沙漠植物。绿洲上建有一个小型定居点，由沙漠部落和商队休息站组成。帐篷和低矮的石头建筑散布在水源周围，夜晚时篝火和灯光照亮了整个区域。
+  region: southern_realm
+  coordinates:
+    x: 180
+    y: 220
+  connections:
+    - endless_sands
+    - caravan_route
+  points_of_interest:
+    - central_spring
+    - trading_post
+    - tribal_tents
+    - palm_grove
+    - ancient_well
+  ambient_sounds: oasis_sounds.mp3
+  background_music: desert_night.mp3
+  weather_patterns:
+    - hot_days
+    - cold_nights
+    - occasional_sandstorms
+  danger_level: 3
+  available_quests:
+    - water_rights
+    - lost_caravan
+    - desert_beast
+  lore: "这片绿洲是南方沙漠中最大和最古老的几处水源之一，几千年来一直是贸易路线的重要停靠点。当地的游牧部落认为绿洲是沙漠神灵的礼物，守护它是神圣的职责。绿洲中心的泉水据说具有治愈properties，每年都吸引许多病人前来寻求治疗。"
+
+- id: floating_isles
+  name: 浮空岛
+  type: wilderness
+  description: 一群悬浮在天空中的小岛，由不知名的古代魔法支撑。岛上生长着奇特的植物，居住着罕见的生物。从岛上可以俯瞰下方的大地，云雾时常环绕在岛屿周围。岛与岛之间由魔法桥梁或飞行装置连接。
+  region: central_realm
+  coordinates:
+    x: 140
+    y: 140
+  connections:
+    - sky_dock
+    - central_isle
+  points_of_interest:
+    - wizard_tower
+    - cloud_garden
+    - observation_point
+    - storm_temple
+    - crystal_formation
+  ambient_sounds: high_winds.mp3
+  background_music: ethereal_heights.mp3
+  weather_patterns:
+    - frequent_lightning
+    - clear_skies
+    - magical_aurora
+  danger_level: 7
+  available_quests:
+    - sky_elementals
+    - rare_materials
+    - wizard_request
+  lore: "浮空岛的起源是个谜，一些学者认为它们是艾尔德拉文明的杰作，而另一些人则认为是某种自然魔法现象。不管真相如何，这些岛屿已经成为魔法研究的中心，许多法师在此建立了研究设施。岛上的环境孕育了许多在地面上找不到的魔法生物和植物，是收集稀有材料的绝佳场所。"
+
+- id: dragon_peak
+  name: 龙之峰
+  type: wilderness
+  description: 一座高耸入云的火山，山顶常年被浓烟笼罩。山体岩石呈现不自然的深红色，多处可见岩浆流动的痕迹。山腰和山顶分布着数个巨大的洞穴，据说是龙族的巢穴。整个山区温度异常高，只有耐热的生物能在此生存。
+  region: eastern_realm
+  coordinates:
+    x: 220
+    y: 180
+  connections:
+    - lava_fields
+    - mountain_trail
+  points_of_interest:
+    - main_crater
+    - dragon_cave
+    - obsidian_field
+    - lava_lake
+    - charred_forest
+  ambient_sounds: volcano_rumble.mp3
+  background_music: dragon_territory.mp3
+  weather_patterns:
+    - ash_rain
+    - extreme_heat
+    - smoke_clouds
+  danger_level: 9
+  available_quests:
+    - dragon_slaying
+    - fire_resistant_materials
+    - lost_explorer
+  lore: "龙之峰是世界上为数不多的已知龙巢之一，居住着几条古老而强大的火龙。这座山自古以来就是龙族的领地，人类和其他种族通常避免接近。火山的活动据说与龙的情绪有关，当龙怒吼时，火山就会喷发。山上蕴含着珍贵的矿物和材料，但只有最勇敢或最鲁莽的冒险者才敢冒险采集。"

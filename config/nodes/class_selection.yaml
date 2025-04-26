@@ -1,0 +1,33 @@
+id: class_selection
+title: 选择你的职业
+text: |-
+  职业决定了你在埃尔德拉世界中的行事方式和专长技能。
+  
+  不同的职业擅长不同的解决问题的方法：战士依靠力量和战斗技巧，法师运用神秘的魔法，游侠则精通追踪和远程攻击，而盗贼擅长潜行和解锁秘密。
+  
+  你想成为什么样的冒险者？
+image: classes.jpg
+choices:
+  - id: class_warrior
+    text: 战士 - 精通战斗技巧和武器运用
+    target: class_info
+    effect: state.tempClass = 'warrior'
+    
+  - id: class_mage
+    text: 法师 - 掌握神秘的魔法力量
+    target: class_info
+    effect: state.tempClass = 'mage'
+    
+  - id: class_ranger
+    text: 游侠 - 熟悉荒野生存和远程攻击
+    target: class_info
+    effect: state.tempClass = 'ranger'
+    
+  - id: class_rogue
+    text: 盗贼 - 擅长潜行和寻找隐藏的宝藏
+    target: class_info
+    effect: state.tempClass = 'rogue'
+    
+  - id: back_to_creation
+    text: 返回角色创建
+    target: character_creation

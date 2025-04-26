@@ -1,0 +1,21 @@
+id: attribute_customization
+title: 自定义你的角色属性
+text: |-
+  你现在可以分配额外的属性点，根据你的游戏风格和策略进行分配。
+  
+  属性决定了你在游戏中各种行动的成功几率：
+  • 力量影响你的战斗能力和负重
+  • 智力影响你的魔法能力和解谜能力
+  • 魅力影响你与NPC交流的效果
+  • 幸运影响随机事件和寻宝的结果
+  
+  请在下方输入你的角色名称并分配可用的属性点。
+image: attributes.jpg
+choices:
+  - id: save_attributes
+    text: 保存并继续
+    target: character_summary
+    
+  - id: back_to_creation
+    text: 返回角色创建
+    target: character_creation

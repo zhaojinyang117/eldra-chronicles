@@ -1,0 +1,27 @@
+id: character_creation
+title: 创建你的冒险者
+text: |-
+  欢迎来到埃尔德拉世界！在开始你的冒险旅程之前，你需要创建自己的角色。
+  
+  你将选择你的种族、职业，并分配属性点以定义你的角色特长。每个决定都将影响你在游戏中的体验和可选择的道路。
+  
+  请选择你想要的选项：
+image: character_creation.jpg
+choices:
+  - id: select_race
+    text: 选择种族
+    target: race_selection
+    
+  - id: select_class
+    text: 选择职业
+    target: class_selection
+    
+  - id: customize_attributes
+    text: 自定义属性
+    target: attribute_customization
+    condition: state.character && state.character.race && state.character.class
+    
+  - id: finish_character
+    text: 完成角色创建
+    target: character_summary
+    condition: state.character && state.character.race && state.character.class

@@ -1,0 +1,111 @@
+id: "debug_node"
+title: "游戏状态检查"
+text: |
+  这是一个特殊节点，用于查看游戏状态和解决可能的问题。
+
+  当前角色状态：
+  - 种族: ${state.race || '未选择'}
+  - 职业: ${state.class || '未选择'}
+  - 金币: ${state.gold || 0}
+  - 生命值: ${state.health || 100}/100
+  - 业力: ${state.karma || 0}
+  - 时间: ${state.time || 0} 单位
+  - 完成任务: ${state.questsCompleted || 0} 个
+  - 当前任务: ${state.activeQuest || '无'}
+
+  属性：
+  - 力量: ${state.attributes ? state.attributes.strength : '?'}
+  - 智力: ${state.attributes ? state.attributes.intelligence : '?'}
+  - 魅力: ${state.attributes ? state.attributes.charisma : '?'}
+  - 幸运: ${state.attributes ? state.attributes.luck : '?'}
+
+  物品栏: ${state.inventory && state.inventory.length > 0 ? state.inventory.join(', ') : '空'}
+  特殊物品: ${state.specialItems && state.specialItems.length > 0 ? state.specialItems.join(', ') : '无'}
+
+  当前游戏状态: ${state.characterCreated ? '已创建角色' : '未创建角色'}
+image: "/images/debug.jpg"
+init: |
+  // 此节点用于检查和修复游戏状态
+  function checkGameState() {
+    let issues = [];
+
+    // 检查基本属性是否存在
+    if (!state.attributes) {
+      state.attributes = {
+        strength: 5,
+        intelligence: 5,
+        charisma: 5,
+        luck: 5
+      };
+      issues.push("修复了缺失的属性");
+    }
+
+    // 检查数值型状态
+    if (typeof state.gold === 'undefined') state.gold = 10;
+    if (typeof state.health === 'undefined') state.health = 100;
+    if (typeof state.karma === 'undefined') state.karma = 0;
+    if (typeof state.knowledge === 'undefined') state.knowledge = 0;
+    if (typeof state.time === 'undefined') state.time = 0;
+    if (typeof state.questsCompleted === 'undefined') state.questsCompleted = 0;
+
+    // 检查数组型状态
+    if (!state.inventory) state.inventory = [];
+    if (!state.specialItems) state.specialItems = [];
+
+    // 检查当前位置状态
+    if (!state.returnNode) state.returnNode = "city_crossroad";
+
+    // 返回检查结果
+    return issues;
+  }
+
+  // 运行检查
+  state.debugIssues = checkGameState();
+choices:
+  - id: "fix_character"
+    text: "修复角色状态"
+    target: "debug_node"
+    condition: ""
+    effect: "state.attributes = {strength: 5, intelligence: 5, charisma: 5, luck: 5}; state.health = 100;"
+
+  - id: "reset_quests"
+    text: "重置任务状态"
+    target: "debug_node"
+    condition: ""
+    effect: "state.activeQuest = ''; state.questsCompleted = 0;"
+
+  - id: "add_gold"
+    text: "添加50金币（测试用）"
+    target: "debug_node"
+    condition: ""
+    effect: "state.gold = (state.gold || 0) + 50;"
+
+  - id: "clear_inventory"
+    text: "清空物品栏"
+    target: "debug_node"
+    condition: ""
+    effect: "state.inventory = []; state.specialItems = [];"
+
+  - id: "goto_start"
+    text: "前往起始位置"
+    target: "start"
+    condition: ""
+    effect: ""
+
+  - id: "goto_city"
+    text: "前往城市十字路口"
+    target: "city_crossroad"
+    condition: ""
+    effect: ""
+
+  - id: "goto_tavern"
+    text: "前往酒馆"
+    target: "tavern"
+    condition: ""
+    effect: ""
+
+  - id: "goto_character_creation"
+    text: "前往角色创建"
+    target: "character_creation"
+    condition: ""
+    effect: ""

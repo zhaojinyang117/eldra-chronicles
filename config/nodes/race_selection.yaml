@@ -1,0 +1,33 @@
+id: race_selection
+title: 选择你的种族
+text: |-
+  在埃尔德拉大陆上，许多不同的种族共存。每个种族都有其独特的历史、特性和能力。
+  
+  你的角色种族将决定你的基础属性值和某些特殊能力。请仔细选择适合你游戏风格的种族。
+  
+  你想成为哪个种族的冒险者？
+image: races.jpg
+choices:
+  - id: race_human
+    text: 人类 - 适应力强，全面发展
+    target: race_info
+    effect: state.tempRace = 'human'
+    
+  - id: race_elf
+    text: 精灵 - 敏捷聪慧，擅长魔法
+    target: race_info
+    effect: state.tempRace = 'elf'
+    
+  - id: race_dwarf
+    text: 矮人 - 坚韧强壮，精通锻造
+    target: race_info
+    effect: state.tempRace = 'dwarf'
+    
+  - id: race_orc
+    text: 兽人 - 强大勇猛，战斗力超群
+    target: race_info
+    effect: state.tempRace = 'orc'
+    
+  - id: back_to_creation
+    text: 返回角色创建
+    target: character_creation

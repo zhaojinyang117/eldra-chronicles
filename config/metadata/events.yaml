@@ -1,0 +1,212 @@
+# 事件类型元数据配置
+# 定义游戏中可能发生的各类随机事件
+
+- id: bandit_ambush
+  name: 强盗伏击
+  description: 一群武装强盗突然从藏身处现身，挡住了道路，似乎打算抢劫过路的旅客。
+  possible_outcomes:
+    - 击败强盗并获得战利品
+    - 交出财物免遭伤害
+    - 通过谈判或威胁说服强盗离开
+    - 逃跑并可能受伤
+  required_skills:
+    - 战斗能力
+    - 谈判技巧
+    - 敏捷反应
+  rewards:
+    - 战利品（武器、金币）
+    - 增强战斗经验
+    - 可能获得情报
+  dangers:
+    - 身体伤害
+    - 失去财物
+    - 陷入包围
+
+- id: mystical_encounter
+  name: 神秘邂逅
+  description: 一个神秘的存在出现在路上，可能是森林精灵、隐士或其他超自然生物，它似乎对你有所求或者想要传达某种信息。
+  possible_outcomes:
+    - 获得神秘知识或预言
+    - 接受特殊任务
+    - 获得魔法物品
+    - 遭受诅咒或祝福
+  required_skills:
+    - 智力
+    - 魔法知识
+    - 沟通能力
+  rewards:
+    - 独特的魔法物品
+    - 特殊能力
+    - 重要信息
+  dangers:
+    - 误解导致不利后果
+    - 卷入超自然纷争
+    - 魔法副作用
+
+- id: natural_disaster
+  name: 自然灾害
+  description: 突发的自然灾害如暴风雨、地震、雪崩或山洪，威胁着你的安全，需要迅速应对。
+  possible_outcomes:
+    - 成功躲避灾难
+    - 帮助他人并获得声望
+    - 发现被灾难暴露的秘密场所
+    - 受伤或迷路
+  required_skills:
+    - 敏捷
+    - 生存技能
+    - 判断力
+  rewards:
+    - 新发现的场所
+    - 被冲刷出的宝物
+    - 获得他人感激
+  dangers:
+    - 严重伤害
+    - 装备损失
+    - 迷失方向
+
+- id: merchant_caravan
+  name: 商队相遇
+  description: 你遇到一支正在赶路的商队，带着各种商品和消息，可能提供交易或信息交流的机会。
+  possible_outcomes:
+    - 购买稀有物品
+    - 获取远方消息
+    - 护送商队换取报酬
+    - 被骗或买到次品
+  required_skills:
+    - 交易技巧
+    - 判断力
+    - 社交能力
+  rewards:
+    - 特殊商品
+    - 价值情报
+    - 新的任务线索
+  dangers:
+    - 交易损失
+    - 被引入陷阱
+    - 卷入商队纠纷
+
+- id: lost_treasure
+  name: 失落的宝藏
+  description: 你偶然发现了可能指向隐藏宝藏的线索，如一张残破的地图、一个奇怪的符号或一个古老的传说。
+  possible_outcomes:
+    - 找到宝藏
+    - 解开古老谜题
+    - 陷入守护者的陷阱
+    - 引来其他寻宝者的竞争
+  required_skills:
+    - 探索能力
+    - 解谜技巧
+    - 观察力
+  rewards:
+    - 宝藏
+    - 古老知识
+    - 历史发现
+  dangers:
+    - 陷阱和守护
+    - 引来危险对手
+    - 诅咒或负面魔法
+
+- id: injured_traveler
+  name: 受伤的旅行者
+  description: 路边躺着一个受伤或生病的旅行者，看起来需要帮助，但这也可能是个陷阱。
+  possible_outcomes:
+    - 治疗旅行者并获得感谢和回报
+    - 发现这是个陷阱并避免
+    - 获得重要信息或线索
+    - 传染疾病或卷入麻烦
+  required_skills:
+    - 医疗知识
+    - 洞察力
+    - 同情心
+  rewards:
+    - 获得同伴
+    - 声望提升
+    - 意外礼物
+  dangers:
+    - 被设计陷害
+    - 资源消耗
+    - 延误行程
+
+- id: haunted_location
+  name: 闹鬼地点
+  description: 你进入一个据说有超自然现象的地方，如被遗弃的房子、古老的墓地或神秘的石阵。
+  possible_outcomes:
+    - 揭示隐藏的历史
+    - 与幽灵沟通获取信息
+    - 解除诅咒
+    - 被恐惧或超自然力量影响
+  required_skills:
+    - 勇气
+    - 精神力量
+    - 神秘学知识
+  rewards:
+    - 精神启示
+    - 超自然能力
+    - 隐藏宝物
+  dangers:
+    - 心理恐惧
+    - 鬼魂附身
+    - 诅咒影响
+
+- id: wilderness_hunt
+  name: 荒野狩猎
+  description: 你在野外发现了狩猎的机会，可能是稀有的动物、药用植物或其他有价值的资源。
+  possible_outcomes:
+    - 成功捕获猎物
+    - 采集珍稀资源
+    - 被猎物反击
+    - 意外遇到其他猎人或生物
+  required_skills:
+    - 追踪技能
+    - 狩猎能力
+    - 环境知识
+  rewards:
+    - 食物补给
+    - 珍贵材料
+    - 猎物战利品
+  dangers:
+    - 危险的野兽
+    - 自然危害
+    - 迷路或陷阱
+
+- id: magical_anomaly
+  name: 魔法异象
+  description: 周围的环境出现了奇怪的魔法现象，如浮空的物体、时间异常、元素混乱或幻象。
+  possible_outcomes:
+    - 利用异象获得特殊能力
+    - 研究并理解魔法本质
+    - 穿越到其他位面或时间
+    - 被魔法能量伤害
+  required_skills:
+    - 魔法知识
+    - 适应能力
+    - 好奇心
+  rewards:
+    - 魔法洞见
+    - 元素精华
+    - 位面知识
+  dangers:
+    - 未知的魔法效果
+    - 现实扭曲
+    - 引来魔法生物
+
+- id: local_festival
+  name: 当地节日
+  description: 你来到一个正在举办特殊庆典或节日的地方，充满了欢乐、音乐、食物和各种活动。
+  possible_outcomes:
+    - 参与节日获得声望和快乐
+    - 赢得比赛或挑战
+    - 结交新朋友
+    - 卷入节日背后的阴谋
+  required_skills:
+    - 社交能力
+    - 游戏技巧
+    - 文化知识
+  rewards:
+    - 节日奖品
+    - 社会关系
+    - 当地知识
+  dangers:
+    - 过度饮酒后果
+    - 被骗或偷窃
+    - 引起文化冲突

@@ -1,0 +1,28 @@
+id: character_summary
+title: 角色创建完成
+text: |-
+  恭喜你！你的角色创建已经完成。以下是你的角色信息：
+  
+  姓名: {{state.character.name || '未命名冒险者'}}
+  种族: {{#if state.character.race == 'human'}}人类{{/if}}{{#if state.character.race == 'elf'}}精灵{{/if}}{{#if state.character.race == 'dwarf'}}矮人{{/if}}{{#if state.character.race == 'orc'}}兽人{{/if}}
+  职业: {{#if state.character.class == 'warrior'}}战士{{/if}}{{#if state.character.class == 'mage'}}法师{{/if}}{{#if state.character.class == 'ranger'}}游侠{{/if}}{{#if state.character.class == 'rogue'}}盗贼{{/if}}
+  
+  属性:
+  • 力量: {{state.attributes.strength}}
+  • 智力: {{state.attributes.intelligence}}
+  • 魅力: {{state.attributes.charisma}}
+  • 幸运: {{state.attributes.luck}}
+  
+  背景故事:
+  {{state.character.backstory || '这个冒险者的故事尚未书写...'}}
+  
+  准备好开始你的冒险了吗？
+image: character_ready.jpg
+choices:
+  - id: start_adventure
+    text: 开始冒险
+    target: intro_scene
+    
+  - id: edit_character
+    text: 修改角色
+    target: character_creation

@@ -1,0 +1,404 @@
+# 区域元数据配置
+# 定义游戏世界中的各个区域及其特性
+
+- id: city_center
+  name: 黎明之城中心
+  description: 黎明之城的中心区域，繁华热闹，是商业和政治的核心区域。
+  mood: 繁忙而充满活力
+  dangers:
+    - 扒手
+    - 城市守卫的怀疑目光
+  opportunities:
+    - 商业交易
+    - 收集情报
+    - 结交权贵
+  npcs:
+    - 城市守卫
+    - 商人
+    - 贵族
+    - 街头艺人
+  points_of_interest:
+    - 中央广场
+    - 市政厅
+    - 商业大街
+  ambient_events:
+    - 街头表演
+    - 贵族游行
+    - 商队到达
+
+- id: city_tavern
+  name: 醉鹰酒馆
+  description: 城市最古老的酒馆，各种旅行者和冒险者的聚集地，也是流言和传闻的中心。
+  mood: 热闹而略带神秘
+  dangers:
+    - 酒后斗殴
+    - 被卷入阴谋
+  opportunities:
+    - 获取任务
+    - 收集情报
+    - 招募伙伴
+  npcs:
+    - 酒馆老板
+    - 吟游诗人
+    - 醉酒的冒险者
+    - 神秘旅客
+  points_of_interest:
+    - 吧台
+    - 壁炉旁的长桌
+    - 后院
+  ambient_events:
+    - 饮酒比赛
+    - 讲述传奇故事
+    - 流言传播
+
+- id: forest_edge
+  name: 密语森林边缘
+  description: 城市外围的森林地带，树木开始变得茂密，阳光透过树叶形成斑驳的光影。
+  mood: 宁静而神秘
+  dangers:
+    - 小型野兽
+    - 迷路
+  opportunities:
+    - 采集草药
+    - 狩猎
+    - 发现隐藏的小径
+  npcs:
+    - 樵夫
+    - 猎人
+    - 采药人
+  points_of_interest:
+    - 森林小径
+    - 猎人的小屋
+    - 古老的标记石
+  ambient_events:
+    - 鸟群飞过
+    - 发现动物足迹
+    - 远处的歌声
+
+- id: deep_forest
+  name: 密语森林深处
+  description: 森林的核心地带，古老的树木高耸入云，几乎没有阳光能够穿透浓密的树冠。
+  mood: 沉重而神秘
+  dangers:
+    - 大型掠食者
+    - 迷失方向
+    - 自然陷阱
+  opportunities:
+    - 稀有草药
+    - 古老遗迹
+    - 精灵居所
+  npcs:
+    - 森林精灵
+    - 隐士
+    - 迷路的旅行者
+  points_of_interest:
+    - 巨树环
+    - 清澈的湖泊
+    - 遗弃的神殿
+  ambient_events:
+    - 精灵的歌声
+    - 神秘的光芒
+    - 动物的仪式
+
+- id: mountain_pass
+  name: 龙脊山道
+  description: 陡峭的山路蜿蜒向上，两侧是险峻的悬崖和岩壁，远处可以看到连绵的山峰。
+  mood: 荒凉而壮观
+  dangers:
+    - 坠落
+    - 山贼
+    - 恶劣天气
+  opportunities:
+    - 珍贵矿石
+    - 俯瞰全景
+    - 捷径通行
+  npcs:
+    - 商队护卫
+    - 矮人矿工
+    - 独行侠
+  points_of_interest:
+    - 观景台
+    - 废弃的矿洞
+    - 山间神龛
+  ambient_events:
+    - 雪崩
+    - 鹰群盘旋
+    - 远处的龙影
+
+- id: ancient_ruins
+  name: 远古遗迹
+  description: 被时间遗忘的古老建筑群，残破的石柱和雕像诉说着消逝的文明。
+  mood: 神秘而忧伤
+  dangers:
+    - 陷阱机关
+    - 不死生物
+    - 坍塌的建筑
+  opportunities:
+    - 古老宝藏
+    - 失落的知识
+    - 强大魔法
+  npcs:
+    - 考古学者
+    - 宝藏猎人
+    - 古老的守护者
+  points_of_interest:
+    - 中央神殿
+    - 地下密室
+    - 魔法封印
+  ambient_events:
+    - 闪烁的符文
+    - 幽灵出没
+    - 空气中的魔法震动
+
+- id: coastal_village
+  name: 海风村
+  description: 依靠渔业为生的小村庄，简朴的木屋面朝大海，空气中弥漫着盐和鱼的气息。
+  mood: 平静而慵懒
+  dangers:
+    - 海盗袭击
+    - 海上风暴
+    - 凶猛的海兽
+  opportunities:
+    - 航海贸易
+    - 出海冒险
+    - 寻找珍奇贝壳
+  npcs:
+    - 老渔夫
+    - 灯塔守护者
+    - 造船匠
+  points_of_interest:
+    - 码头
+    - 灯塔
+    - 渔民市场
+  ambient_events:
+    - 渔船归航
+    - 海鸟群集
+    - 潮汐变化
+
+- id: underground_cavern
+  name: 蓝光洞穴
+  description: 地下深处的巨大洞穴系统，墙壁上的蓝色水晶发出柔和的光芒，照亮了奇特的地下景观。
+  mood: 神秘而超凡
+  dangers:
+    - 洞穴生物
+    - 迷宫般的通道
+    - 水晶辐射
+  opportunities:
+    - 稀有矿石
+    - 神秘能量
+    - 地下文明
+  npcs:
+    - 矮人矿工
+    - 地下生物研究者
+    - 洞穴居民
+  points_of_interest:
+    - 水晶大厅
+    - 地下湖泊
+    - 古老铭文
+  ambient_events:
+    - 水滴声
+    - 晶体共鸣
+    - 地下河流声
+
+- id: forest_of_whispers
+  name: 低语森林
+  description: 古老而神秘的森林，树木高大密集，常年被雾气笼罩。传说中居住着精灵和神秘生物，林间偶尔传来低语般的声音。
+  climate: 温润
+  danger_level: 2
+  features:
+    - 参天古树
+    - 雾气缭绕
+    - 闪烁的萤火
+    - 隐秘的精灵遗迹
+  npcs:
+    - wandering_elf
+    - forest_hermit
+    - herb_collector
+  possible_events:
+    - creature_encounter
+    - lost_treasure
+    - magic_phenomenon
+  connected_regions:
+    - mountain_pass
+    - riverside_village
+  image: forest_of_whispers.jpg
+
+- id: mountain_pass
+  name: 石牙山道
+  description: 崎岖险峻的山间通道，两侧是陡峭的岩壁和锋利的石笋状岩石。时常有岩崩发生，是通往高地的唯一路径。
+  climate: 寒冷多风
+  danger_level: 4
+  features:
+    - 陡峭岩壁
+    - 狭窄山道
+    - 悬崖峭壁
+    - 偶发岩崩
+  npcs:
+    - mountain_guide
+    - bandit_lookout
+    - trader_caravan
+  possible_events:
+    - rockslide
+    - bandit_ambush
+    - lost_climber
+  connected_regions:
+    - forest_of_whispers
+    - mountain_citadel
+  image: mountain_pass.jpg
+
+- id: riverside_village
+  name: 河畔村
+  description: 坐落在宽阔河流边的宁静村庄，以渔业和农业为主。村民友好，是旅行者常去的休息地。村中有一座古老的水车和集市。
+  climate: 温和
+  danger_level: 1
+  features:
+    - 古老水车
+    - 热闹集市
+    - 渔船码头
+    - 农田
+  npcs:
+    - village_elder
+    - fisherman
+    - tavern_keeper
+    - blacksmith
+  possible_events:
+    - village_festival
+    - fishing_competition
+    - stranger_arrival
+  connected_regions:
+    - forest_of_whispers
+    - open_plains
+  image: riverside_village.jpg
+
+- id: ancient_ruins
+  name: 远古遗迹
+  description: 被丛林覆盖的古代文明遗迹，满是神秘的石碑和雕像。墙壁上刻有无人能解读的符文，据说蕴含强大的魔法力量。
+  climate: 潮湿
+  danger_level: 5
+  features:
+    - 倒塌的石柱
+    - 神秘符文
+    - 地下迷宫
+    - 魔法陷阱
+  npcs:
+    - treasure_hunter
+    - scholar
+    - guardian_construct
+  possible_events:
+    - trap_activation
+    - magical_discovery
+    - guardian_awakening
+  connected_regions:
+    - forbidden_swamp
+    - dark_forest
+  image: ancient_ruins.jpg
+
+- id: mountain_citadel
+  name: 山顶堡垒
+  description: 建在山巅的坚固堡垒，是王国军队的前哨站。从这里可以俯瞰整个山谷，视野极佳。城墙坚固，守卫森严。
+  climate: 寒冷
+  danger_level: 2
+  features:
+    - 高耸城墙
+    - 瞭望塔
+    - 兵营
+    - 铁匠铺
+  npcs:
+    - citadel_commander
+    - veteran_guard
+    - dwarven_smith
+    - messenger
+  possible_events:
+    - military_patrol
+    - dwarven_traders
+    - border_dispute
+  connected_regions:
+    - mountain_pass
+    - northern_tundra
+  image: mountain_citadel.jpg
+
+- id: forbidden_swamp
+  name: 禁忌沼泽
+  description: 阴暗潮湿的沼泽地，迷雾常年不散，水面偶尔泛起不明生物的踪迹。当地人避而远之，传说这里曾是黑巫师的试验场。
+  climate: 潮湿阴暗
+  danger_level: 5
+  features:
+    - 毒瘴迷雾
+    - 沼泽陷阱
+    - 腐败树木
+    - 黑巫师塔废墟
+  npcs:
+    - swamp_hag
+    - lost_soul
+    - mutated_creature
+  possible_events:
+    - poison_mist
+    - quicksand_trap
+    - witch_encounter
+  connected_regions:
+    - ancient_ruins
+    - western_wilderness
+  image: forbidden_swamp.jpg
+
+- id: seaside_harbor
+  name: 碧波港
+  description: 繁忙的海港城市，各种船只进出，贸易繁荣。海风带来咸咸的味道，酒馆里总是挤满了水手和商人，是获取信息的好地方。
+  climate: 海洋性
+  danger_level: 2
+  features:
+    - 繁忙码头
+    - 海鲜市场
+    - 水手酒馆
+    - 贸易公会
+  npcs:
+    - harbor_master
+    - ship_captain
+    - foreign_merchant
+    - tavern_storyteller
+  possible_events:
+    - ship_arrival
+    - smuggling_operation
+    - pirate_rumors
+  connected_regions:
+    - coastal_road
+    - merchant_district
+  image: seaside_harbor.jpg
+
+- id: unknown_region
+  name: 未知区域
+  description: 这是一片神秘未知的区域，充满了探索的可能性。
+  climate: 温和
+  danger_level: 1
+  features:
+    - 迷雾笼罩
+    - 未知的遗迹
+  npcs:
+    - 流浪者
+    - 探险家
+  possible_events:
+    - 发现遗迹
+    - 遇到旅人
+  connected_regions:
+    - dawn_city
+  image: unknown_region.jpg
+
+- id: dawn_city
+  name: 黎明之城
+  description: 一座充满活力的城市，这里是冒险者们经常聚集的地方。
+  climate: 温和
+  danger_level: 0
+  features:
+    - 繁华的市集
+    - 冒险者公会
+    - 城市广场
+  npcs:
+    - 商人
+    - 冒险者
+    - 城市守卫
+  possible_events:
+    - 市集交易
+    - 接取任务
+    - 城市事件
+  connected_regions:
+    - unknown_region
+  image: dawn_city.jpg
